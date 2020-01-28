@@ -3,8 +3,9 @@
 @import "mixins"
 
 $color: #f4c409
-$font: 'DINPro-Regular', sans-serif
+$font: 'Noto Sans', sans-serif
 $font2: 'SKPorsche-Regular', sans-serif
+$font3: 'DINPro-Regular', sans-serif
 
 html
 	box-sizing: border-box
@@ -107,6 +108,7 @@ select
 		line-height: 18px
 		color: inherit
 		text-decoration: none
+		font-family: $font3
 		&.active,
 		&:hover
 			color: #E63E21
@@ -302,6 +304,72 @@ section h2
 		&:hover
 			transform: scale(.9)
 
+.faq
+	margin-top: 250px
+	position: relative
+	margin-bottom: 150px
+	&::after
+		content: ''
+		position: absolute
+		z-index: -1
+		top: 0
+		right: 50%
+		margin-right: -200px
+		background-image: url(../img/bg-6.png)	
+		width: 1109px
+		height: 802px
+	&__inner
+		min-height: 800px
+		padding-top: 140px
+		padding-left: calc(100% - 695px)
+		overflow: hidden
+	&__title
+		font-size: 30px
+		line-height: 40px
+		letter-spacing: 0.1em
+		margin: 0 0 40px	
+	&__list
+		width: calc(50% - 15px)
+		display: block
+		float: left
+		&+&
+			margin-left: 30px
+	&__item
+		padding: 0
+		background-image: linear-gradient(270deg, #191919 0%, rgba(255, 255, 255, 0) 100%)
+		&-caption
+			margin: 0
+			cursor: pointer
+			position: relative
+			padding: 7px 40px 7px 20px
+			transition: all .2s ease-out
+			&:hover
+				color: #E63E21
+			&::before
+				content: ''
+				position: absolute
+				top: 0
+				left: 0
+				width: 2px
+				height: 100%
+				background-color: #E63E21
+			&::after
+				content: ''
+				position: absolute
+				top: 14px
+				right: 15px
+				width: 12px
+				height: 7px
+				background-image: url(../img/faq-arrow-expand.png)
+		&-text
+			margin: 0
+			padding: 8px 20px 20px
+			display: none
+		&.active
+			.faq__item-caption
+				color: #E63E21
+				&::after
+					transform: scale(1,-1)
 
 
 
