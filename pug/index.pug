@@ -9,6 +9,7 @@ html
 		link(rel='shortcut icon', href='img/favicon.ico', type='image/x-icon')
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Sans&display=swap")
 		link(rel='stylesheet', href='css/fonts.css')
+		link(rel='stylesheet', href='css/slick.css')
 		link(rel='stylesheet', href='css/style.css')
 		script(src="https://ctr-localhost.ru/vlad/jq.js")
 
@@ -39,7 +40,7 @@ html
 									li.nav__item
 										a.nav__link(href="https://my.adcombo.com/login").active Log In
 			
-			section.top
+			section.top#top
 				.container
 					.top__inner
 						.top__cartrack.top__cartrack--1
@@ -55,16 +56,16 @@ html
 							span.date__sep
 							span.date__to Finish 01.09.20
 
-			button.scroll
+			button.scroll(data-href="accomodation")
 
-			section.accomodation
+			section.accomodation#accomodation
 				.container
 					.accomodation__inner
 						.accomodation__content
 							h2.accomodation__title “hotel name”
 							p.accomodation__text AdCombo undertakes to provide the participants from&nbsp;the&nbsp;#[span TOP-50]&nbsp;with&nbsp;a #[span free accomodation] at the venue of the final&nbsp;party&nbsp;at&nbsp;its&nbsp;expense
 			
-			section.media
+			section.media#media
 				.container
 					.media__inner
 						.media__videos
@@ -72,11 +73,13 @@ html
 							button.media__prev
 							.media__list
 								.media__item
-									video(data-url="/57/videos/1580079600/rechiol-woman").video
+									video(data-url="/57/videos/1580079600/rechiol-woman", poster="img/bg-2.jpg").video
+								.media__item
+									video(data-url="/57/videos/1580079600/rechiol-woman", poster="img/bg-5.png").video
 							button.media__next
 						h2.media__title How we partied last time
 
-			section.faq
+			section.faq#faq
 				.container
 					.faq__inner
 						h2.faq__title Terms #[br]of participation
@@ -89,4 +92,16 @@ html
 								p.faq__item-caption Who can enter the contest?
 								p.faq__item-text Uniquely brand scalable value whereas high-quality niches. Authoritatively leverage existing granular users for plug-and-play ideas. 
 
+			aside.sections
+				.container
+					.sections__inner
+						.sections__list(data-active="")
+							button.sections__item(data-href="top") Top
+							button.sections__item(data-href="porsche") Porsche
+							button.sections__item(data-href="prizes") Prizes
+							button.sections__item(data-href="accomodation") Accomodation
+							button.sections__item(data-href="media") Media
+							button.sections__item(data-href="faq") FAQ
+
+		script(src="js/slick.min.js")
 		script(src="js/common.js")

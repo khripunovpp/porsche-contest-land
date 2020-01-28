@@ -1,17 +1,115 @@
-var Util = {
-    randomInteger: function(min, max) {
-        var rand = min + Math.random() * (max - min)
-        rand = Math.round(rand);
-        return rand;
-    },
-    scrollToEl: function(el, offset) {
-        $("html,body").animate({ scrollTop: el.offset().top + (offset || 0) }, 500);
-    },
-    trimString: function(string) {
-        return string.split(' ').join('');
+$.fn.isOnScreen = function(shift) {
+  if (!shift) {
+    shift = 0;
+  }
+  var viewport = {};
+  viewport.top = $(window).scrollTop();
+  viewport.bottom = viewport.top + $(window).height();
+  var bounds = {};
+  bounds.top = this.offset().top + shift;
+  bounds.bottom = bounds.top + this.outerHeight() - shift;
+  return bounds.top <= viewport.bottom && bounds.bottom >= viewport.top;
+};
+
+var menuTriggerOfset = $(".scroll").offset().top;
+var sectionsNav = $(".sections");
+var shift = 150;
+
+var scrollDetection = function() {
+  $("section").each(function() {
+    var that = this;
+
+    if ($(that).isOnScreen(shift)) {
+      hightlight($(that).attr("id"));
     }
-}
+  });
+
+  var scrollTop = $(document).scrollTop(),
+    viewportHeight = $(window).innerHeight();
+
+  if (scrollTop + viewportHeight - shift >= menuTriggerOfset) {
+    sectionsNav.addClass("show");
+  } else {
+    sectionsNav.removeClass("show");
+  }
+};
+
+var hightlight = function(id) {
+  $(".sections__list").attr("data-active", id);
+  $(".sections__item")
+    .siblings()
+    .removeClass("active");
+  $('.sections__item[data-href="' + id + '"]').addClass("active");
+};
+
+var faq = function(e) {
+  e.preventDefault();
+  var item = $(e.target).closest(".faq__item");
+  item.find(".faq__item-text").slideToggle();
+  item.toggleClass("active");
+};
+
+var videoPlayer = function() {
+  $("video").each(function() {
+    if ($(this).data("url")) {
+    var posterUrl = $(this).attr('poster');
+    $(this).removeAttr('poster')
+      $(this)
+        .attr("controlsList", "nodownload")
+        .attr("controls", "controls")
+        .html(
+          '<source src="//cdn.ahacdu.com' +
+            $(this).data("url") +
+            '.mp4"><source src="//cdn.ahacdu.com' +
+            $(this).data("url") +
+            '.webm">'
+        );
+        $(this).after($('<div class="media__poster" style="background-image: url('+posterUrl+')"></div>'))
+    }
+  });
+
+  var slider = $(".media__list").slick({
+    infinite: false,
+    fade: true,
+    speed: 500,
+    prevArrow: $(".media__prev"),
+    nextArrow: $(".media__next")
+  });
+
+
+  var playBtn = $('.media__play'),
+  videoWrap =  $('.media__videos'),
+  video = document.querySelector('.slick-active video');
+
+  
+  slider.on('beforeChange', function(){
+    video.pause();
+    videoWrap.removeClass('playing');
+  });
+
+  slider.on('afterChange', function(){
+    video = document.querySelector('.slick-active video');
+  });
+
+  playBtn.on('click', function() {
+    video.play();
+    $(video).closest('.media__item').addClass('was-played');
+    videoWrap.addClass('playing');
+})
+};
 
 $(function() {
+  scrollDetection();
+  $(document).on("scroll", scrollDetection);
 
+  $(".sections__item, .scroll").on("click", function(e) {
+    e.preventDefault();
+    var id = $(this).attr("data-href");
+    var section = $("#" + id).offset().top;
+    $("html, body").animate({ scrollTop: section }, 666);
+  });
+
+  $(".faq__item-caption").on("click", faq);
+
+  videoPlayer();
 });

@@ -239,15 +239,16 @@ section h2
 		min-height: 800px
 		padding-top: 130px
 	&__videos
-		width: 520px
-		height: 290px
 		margin: 0 auto
 		border-top: 2px solid #fff
 		position: relative
+		width: 520px
+		height: 290px
 		&::after,
 		&::before
 			content: ''
 			position: absolute
+			z-index: 1
 			width: 2px
 			height: 100%
 			background-image: linear-gradient(to bottom, #fff, #000)
@@ -256,6 +257,12 @@ section h2
 			right: 0
 		&::before
 			left: 0
+		&.playing
+			.media__play
+				transform: scale(0)
+			.was-played
+				.media__poster
+					display: none
 	&__title
 		text-align: center
 		font-size: 30px
@@ -276,6 +283,8 @@ section h2
 		margin-top: -16px
 		cursor: pointer
 		transition: all .2s ease-out
+		&.slick-disabled
+			display: none !important
 	&__prev
 		left: -50px
 		transform: scale(-1,1)
@@ -300,9 +309,30 @@ section h2
 		margin-top: -30px
 		margin-left: -20px
 		cursor: pointer
-		transition: all .2s ease-out
+		transition: all .3s ease-out
 		&:hover
 			transform: scale(.9)
+	&__item
+		position: relative
+		width: 520px
+		height: 290px
+	&__poster
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%	
+		background-size: cover
+		background-position: 50% 50%
+
+.video
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	border: none
 
 .faq
 	margin-top: 250px
@@ -372,6 +402,77 @@ section h2
 					transform: scale(1,-1)
 
 
+.sections
+	position: fixed
+	z-index: 3
+	bottom: 60px
+	left: 0
+	width: 100%
+	transform: translateY(200px)
+	transition: all .6s ease-out
+	&.show
+		transform: translateY(0)
+	&__list
+		display: flex
+		justify-content: space-between
+		position: relative
+	&__item
+		font-size: 20px
+		line-height: 1
+		letter-spacing: 0.1em
+		font-family: $font2
+		color: #fff
+		padding: 0
+		background-color: transparent
+		border: none
+		color: #777
+		cursor: pointer
+		transition: all .2s ease-out
+		position: relative
+		&::after
+			content: ''
+			position: absolute
+			z-index: 1
+			top: 40px
+			left: -45px
+			display: block
+			width: calc(100% + 90px)
+			height: 4px
+			background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)	
+			filter: blur(2px)
+			transition: all .2s ease-out
+			transform: scaleX(0)
+		&::before
+			content: ''
+			position: absolute
+			bottom: -84px
+			left: -90px
+			width: calc(100% + 180px)
+			height: 24px
+			box-shadow: 0px -10px 75px #EB1515
+			opacity: 0
+			transition: all .2s ease-out
+		&:hover,
+		&.active
+			color: #fff
+			&::after
+				transform: scaleX(1)
+		&.active
+			&::before
+				opacity: 1
 
-//ALWAYS END
+
+
+@media screen and (-webkit-min-device-pixel-ratio:0)
+	.sections__item
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		background-image: -webkit-linear-gradient(#fff, #000)
+		&:hover,
+		&.active
+			background-image: none
+			-webkit-text-fill-color: #fff
+			-webkit-background-clip: initial
+	
+	//ALWAYS END
 @import "media"

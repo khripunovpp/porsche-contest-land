@@ -8,6 +8,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans&amp;display=swap">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://ctr-localhost.ru/vlad/jq.js"></script>
   </head>
@@ -34,7 +35,7 @@
           </div>
         </div>
       </header>
-      <section class="top">
+      <section class="top" id="top">
         <div class="container">
           <div class="top__inner">
             <div class="top__cartrack top__cartrack--1"><img class="top__car" src="img/car-1.png" alt=""><img class="top__model" src="img/boxster_logo.svg" alt=""></div>
@@ -44,8 +45,8 @@
           </div>
         </div>
       </section>
-      <button class="scroll"></button>
-      <section class="accomodation">
+      <button class="scroll" data-href="accomodation"></button>
+      <section class="accomodation" id="accomodation">
         <div class="container">
           <div class="accomodation__inner">
             <div class="accomodation__content">
@@ -55,7 +56,7 @@
           </div>
         </div>
       </section>
-      <section class="media">
+      <section class="media" id="media">
         <div class="container">
           <div class="media__inner">
             <div class="media__videos">
@@ -63,7 +64,10 @@
               <button class="media__prev"></button>
               <div class="media__list">
                 <div class="media__item">
-                  <video class="video" data-url="/57/videos/1580079600/rechiol-woman"></video>
+                  <video class="video" data-url="/57/videos/1580079600/rechiol-woman" poster="img/bg-2.jpg"></video>
+                </div>
+                <div class="media__item">
+                  <video class="video" data-url="/57/videos/1580079600/rechiol-woman" poster="img/bg-5.png"></video>
                 </div>
               </div>
               <button class="media__next"></button>
@@ -72,7 +76,7 @@
           </div>
         </div>
       </section>
-      <section class="faq">
+      <section class="faq" id="faq">
         <div class="container">
           <div class="faq__inner">
             <h2 class="faq__title">Terms <br>of participation</h2>
@@ -91,7 +95,22 @@
           </div>
         </div>
       </section>
+      <aside class="sections">
+        <div class="container">
+          <div class="sections__inner">
+            <div class="sections__list" data-active="">
+              <button class="sections__item" data-href="top">Top</button>
+              <button class="sections__item" data-href="porsche">Porsche</button>
+              <button class="sections__item" data-href="prizes">Prizes</button>
+              <button class="sections__item" data-href="accomodation">Accomodation</button>
+              <button class="sections__item" data-href="media">Media</button>
+              <button class="sections__item" data-href="faq">FAQ</button>
+            </div>
+          </div>
+        </div>
+      </aside>
     </div>
+    <script src="js/slick.min.js"></script>
     <script src="js/common.js"></script>
   </body>
 </html>
