@@ -1,0 +1,176 @@
+@import "bourbon"
+@import "icon.sass"
+@import "mixins"
+
+$color: #f4c409
+$font: 'DINPro-Regular', sans-serif
+$font2: 'SKPorsche-Regular', sans-serif
+
+html
+	box-sizing: border-box
+
+*,
+*::after,
+*::before
+	box-sizing: inherit
+	outline: none
+
+@include placeholder()
+  color: #eee
+
+body
+	margin: 0	
+	overflow-x: hidden
+	font-family: $font
+	line-height: 1.4
+	font-size: 14px
+	background-color: #000000
+	color: #ffffff
+	text-size-adjust: 100%
+	-webkit-tap-highlight-color: transparent
+
+img
+	max-width: 100%	
+	border: none	
+	outline: none	
+
+a
+	border: none	
+	outline: none	
+
+ul
+	list-style-type: none	
+	margin: 0	
+	padding: 0
+
+select::-ms-expand
+	display: none
+
+select
+	appearance: none
+
+button,
+input,
+textarea,
+select
+	font-family: $font
+
+%container
+	width: 100%
+	max-width: 1600px	
+	padding: 0 50px
+	margin: 0 auto
+
+%grid
+	display: table
+	width: 100%
+	table-layout: fixed
+
+%part
+	display: table-cell
+	vertical-align: top
+
+.container
+	@extend %container
+
+.page
+	overflow: hidden
+
+.header
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	z-index: 2
+	&__inner
+		@extend %grid
+	&__logo,
+	&__menu
+		display: table-cell
+		vertical-align: middle
+	&__logo
+		width: 380px
+		img
+			position: relative
+			left: -95px
+	&__menu
+		text-align: right
+	
+.nav
+	&__list
+	&__item
+		display: inline-block
+		margin-left: 40px
+	&__link
+		font-size: 15px
+		line-height: 18px
+		color: inherit
+		text-decoration: none
+		&.active,
+		&:hover
+			color: #E63E21
+
+section
+	background-repeat: no-repeat
+
+section h1,
+section h2
+	font-family: $font2
+
+.top
+	background-image: url(../img/bg-1.jpg)
+	background-position: 50% 0
+	&__inner
+		position: relative
+	&__cartrack
+		position: relative
+		&--1
+			text-align: right
+			padding-top: 50px
+			.top__model
+				right: 870px
+				top: 237px
+			.top__car
+					right: -55px
+		&--2
+			.top__model
+				left: 840px
+				top: 150px
+			.top__car
+					left: -95px
+	&__model
+		position: absolute
+	&__car
+			position: relative
+	&__title
+		text-align: center
+		margin-top: -135px
+		letter-spacing: 0.1em
+		line-height: 45px
+		font-weight: 40
+		margin-bottom: 25px
+		strong
+			font-size: 65px
+			display: block
+			font-weight: 40
+	&__date
+		position: absolute
+		bottom: 65px
+		right: 0
+
+
+.date
+	font-size: 18px
+	line-height: 25px
+	&__sep
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		top: -2px
+		margin: 0 30px
+		width: 93px
+		height: 10px
+		background-image: url(../img/date-arrow.png)
+
+//ALWAYS END
+@import "media"
