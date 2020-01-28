@@ -87,7 +87,7 @@ select {
 .container {
   width: 100%;
   max-width: 1600px;
-  padding: 0 50px;
+  padding: 0 30px;
   margin: 0 auto;
 }
 
@@ -115,12 +115,13 @@ select {
 }
 
 .header__logo {
-  width: 380px;
+  width: 150px;
 }
 
 .header__logo img {
   position: relative;
   left: -95px;
+  max-width: none;
 }
 
 .header__menu {
@@ -157,11 +158,11 @@ section h2 {
 .top {
   background-image: url(../img/bg-1.jpg);
   background-position: 50% 0;
-  min-height: 872px;
 }
 
 .top__inner {
   position: relative;
+  min-height: 872px;
 }
 
 .top__cartrack {
@@ -265,19 +266,18 @@ section h2 {
   filter: blur(2px);
 }
 
-.hotel {
+.accomodation {
   margin-top: 150px;
   background-image: url(../img/bg-2.jpg);
   background-position: 50% 50%;
+}
+
+.accomodation__inner {
+  position: relative;
   min-height: 872px;
 }
 
-.hotel__inner {
-  position: relative;
-  min-height: 100vh;
-}
-
-.hotel__content {
+.accomodation__content {
   width: 550px;
   position: absolute;
   top: 50%;
@@ -289,21 +289,133 @@ section h2 {
   transform: translateY(-50%);
 }
 
-.hotel__title {
+.accomodation__title {
   margin: 0;
   font-size: 30px;
   line-height: 40px;
   margin: 0 0 10px;
 }
 
-.hotel__text {
+.accomodation__text {
   margin: 0;
   font-size: 18px;
   line-height: 30px;
 }
 
-.hotel__text span {
+.accomodation__text span {
   color: #E63E21;
+}
+
+.media {
+  background-image: url(../img/bg-5.png);
+  background-position: 50% 0;
+  margin-top: 250px;
+}
+
+.media__inner {
+  min-height: 800px;
+  padding-top: 130px;
+}
+
+.media__videos {
+  width: 520px;
+  height: 290px;
+  margin: 0 auto;
+  border-top: 2px solid #fff;
+  position: relative;
+}
+
+.media__videos::after, .media__videos::before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
+  background-image: -o-linear-gradient(top, #fff, #000);
+  background-image: linear-gradient(to bottom, #fff, #000);
+  top: 0;
+}
+
+.media__videos::after {
+  right: 0;
+}
+
+.media__videos::before {
+  left: 0;
+}
+
+.media__title {
+  text-align: center;
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  margin: 0;
+}
+
+.media__prev, .media__next {
+  width: 21px;
+  height: 32px;
+  background-image: url(../img/video-arrow.png);
+  background-color: transparent;
+  padding: 0;
+  line-height: 1;
+  border: none;
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.media__prev {
+  left: -50px;
+  -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
+  transform: scale(-1, 1);
+}
+
+.media__prev:hover {
+  -webkit-transform: scale(-1, 1) translateX(5px);
+  -ms-transform: scale(-1, 1) translateX(5px);
+  transform: scale(-1, 1) translateX(5px);
+}
+
+.media__next {
+  right: -50px;
+}
+
+.media__next:hover {
+  -webkit-transform: translateX(5px);
+  -ms-transform: translateX(5px);
+  transform: translateX(5px);
+}
+
+.media__play {
+  width: 53px;
+  height: 61px;
+  background-image: url(../img/play-icon.png);
+  padding: 0;
+  line-height: 1;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin-top: -30px;
+  margin-left: -20px;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.media__play:hover {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
 }
 
 /* Desktop-frist */

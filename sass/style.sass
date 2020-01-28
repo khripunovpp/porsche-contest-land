@@ -58,7 +58,7 @@ select
 %container
 	width: 100%
 	max-width: 1600px	
-	padding: 0 50px
+	padding: 0 30px
 	margin: 0 auto
 
 %grid
@@ -89,10 +89,11 @@ select
 		display: table-cell
 		vertical-align: middle
 	&__logo
-		width: 380px
+		width: 150px
 		img
 			position: relative
 			left: -95px
+			max-width: none
 	&__menu
 		text-align: right
 	
@@ -122,9 +123,9 @@ section h2
 .top
 	background-image: url(../img/bg-1.jpg)
 	background-position: 50% 0
-	min-height: 872px
 	&__inner
 		position: relative
+		min-height: 872px
 	&__cartrack
 		position: relative
 		&--1
@@ -200,14 +201,13 @@ section h2
 		filter: blur(2px)
 		
 
-.hotel
+.accomodation
 	margin-top: 150px
 	background-image: url(../img/bg-2.jpg)
 	background-position: 50% 50%
-	min-height: 872px
 	&__inner
 		position: relative
-		min-height: 100vh
+		min-height: 872px
 	&__content
 		width: 550px
 		position: absolute
@@ -229,7 +229,78 @@ section h2
 			color: #E63E21
 
 
-
+.media
+	background-image: url(../img/bg-5.png)
+	background-position: 50% 0
+	margin-top: 250px
+	&__inner
+		min-height: 800px
+		padding-top: 130px
+	&__videos
+		width: 520px
+		height: 290px
+		margin: 0 auto
+		border-top: 2px solid #fff
+		position: relative
+		&::after,
+		&::before
+			content: ''
+			position: absolute
+			width: 2px
+			height: 100%
+			background-image: linear-gradient(to bottom, #fff, #000)
+			top: 0
+		&::after
+			right: 0
+		&::before
+			left: 0
+	&__title
+		text-align: center
+		font-size: 30px
+		line-height: 40px
+		letter-spacing: 0.1em
+		margin: 0
+	&__prev,
+	&__next
+		width: 21px
+		height: 32px
+		background-image: url(../img/video-arrow.png)
+		background-color: transparent
+		padding: 0
+		line-height: 1
+		border: none
+		position: absolute
+		top: 50%
+		margin-top: -16px
+		cursor: pointer
+		transition: all .2s ease-out
+	&__prev
+		left: -50px
+		transform: scale(-1,1)
+		&:hover
+			transform: scale(-1,1) translateX(5px)
+	&__next
+		right: -50px
+		&:hover
+			transform: translateX(5px)
+	&__play
+		width: 53px
+		height: 61px
+		background-image: url(../img/play-icon.png)
+		padding: 0
+		line-height: 1
+		border: none
+		background-color: transparent
+		position: absolute
+		z-index: 1
+		top: 50%
+		left: 50%	
+		margin-top: -30px
+		margin-left: -20px
+		cursor: pointer
+		transition: all .2s ease-out
+		&:hover
+			transform: scale(.9)
 
 
 
