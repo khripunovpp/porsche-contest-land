@@ -116,10 +116,13 @@ section
 section h1,
 section h2
 	font-family: $font2
+	font-weight: 400
+	font-size: 20px
 
 .top
 	background-image: url(../img/bg-1.jpg)
 	background-position: 50% 0
+	min-height: 872px
 	&__inner
 		position: relative
 	&__cartrack
@@ -147,12 +150,11 @@ section h2
 		margin-top: -135px
 		letter-spacing: 0.1em
 		line-height: 45px
-		font-weight: 40
 		margin-bottom: 25px
 		strong
 			font-size: 65px
 			display: block
-			font-weight: 40
+			font-weight: 400
 	&__date
 		position: absolute
 		bottom: 65px
@@ -171,6 +173,66 @@ section h2
 		width: 93px
 		height: 10px
 		background-image: url(../img/date-arrow.png)
+
+.scroll
+	display: block
+	margin: 0 auto
+	width: 33px
+	height: 18px
+	background-image: url(../img/scroll-down.png)
+	background-repeat: no-repeat
+	padding: 0
+	border: none
+	background-color: transparent
+	position: relative
+	cursor: pointer
+	&::after
+		content: ''
+		position: absolute
+		z-index: 1
+		top: 40px
+		left: 50%
+		margin-left: -83px
+		display: block
+		width: 165px
+		height: 4px
+		background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)	
+		filter: blur(2px)
+		
+
+.hotel
+	margin-top: 150px
+	background-image: url(../img/bg-2.jpg)
+	background-position: 50% 50%
+	min-height: 872px
+	&__inner
+		position: relative
+		min-height: 100vh
+	&__content
+		width: 550px
+		position: absolute
+		top: 50%
+		left: 50%
+		margin-left: -275px
+		text-align: center
+		transform: translateY(-50%)
+	&__title
+		margin: 0
+		font-size: 30px
+		line-height: 40px
+		margin: 0 0 10px
+	&__text
+		margin: 0
+		font-size: 18px
+		line-height: 30px
+		span
+			color: #E63E21
+
+
+
+
+
+
 
 //ALWAYS END
 @import "media"
