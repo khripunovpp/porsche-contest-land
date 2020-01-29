@@ -250,6 +250,7 @@ section h2 {
   position: relative;
   z-index: 1;
   cursor: pointer;
+  overflow: visible;
 }
 
 .scroll::after {
@@ -273,6 +274,7 @@ section h2 {
   background-position: center bottom 15px;
   position: relative;
   margin-top: 250px;
+  margin-bottom: 150px;
 }
 
 .cars__bg {
@@ -434,6 +436,145 @@ section h2 {
 .cars__footer {
   margin-top: 85px;
   text-align: center;
+}
+
+.prizes__inner {
+  padding-top: 230px;
+  font-size: 0;
+}
+
+.prizes__content {
+  width: 35%;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  z-index: 1;
+}
+
+.prizes__slider {
+  width: 65%;
+  display: inline-block;
+}
+
+.prizes__slider .slick-list {
+  overflow: visible;
+}
+
+.prizes__slider_item {
+  min-height: 570px;
+}
+
+.prizes__slider_item-wrap {
+  position: relative;
+  text-align: right;
+}
+
+.prizes__slider_item[data-slick-index="0"] .prizes__slider_item-wrap {
+  margin-top: 210px;
+}
+
+.prizes__slider_item[data-slick-index="0"] .prizes__item {
+  top: -440px;
+  left: -690px;
+}
+
+.prizes__slider_item[data-slick-index="0"] .prizes__logo {
+  margin-bottom: 30px;
+}
+
+.prizes__slider_item[data-slick-index="1"] .prizes__slider_item-wrap {
+  margin-top: 115px;
+}
+
+.prizes__slider_item[data-slick-index="1"] .prizes__item {
+  top: -220px;
+  left: -60px;
+}
+
+.prizes__slider_item[data-slick-index="1"] .prizes__logo {
+  margin-left: -20px;
+}
+
+.prizes__slider_item[data-slick-index="2"] .prizes__item {
+  top: -120px;
+  left: -40px;
+}
+
+.prizes__title {
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  margin: 0 0 30px;
+}
+
+.prizes__text {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.prizes__text span {
+  color: #E63E21;
+}
+
+.prizes__list {
+  margin-top: 50px;
+}
+
+.prizes__list button {
+  cursor: pointer;
+  position: relative;
+  padding: 7px 45px 7px 20px;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  border: none;
+  border-left: 2px solid #fff;
+  color: #fff;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  text-align: left;
+  margin-bottom: 30px;
+  background-image: -webkit-gradient(linear, right top, left top, from(#191919), to(rgba(255, 255, 255, 0)));
+  background-image: -o-linear-gradient(right, #191919 0%, rgba(255, 255, 255, 0) 100%);
+  background-image: linear-gradient(270deg, #191919 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.prizes__list button::after {
+  content: '';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: -5px;
+  width: 16px;
+  height: 10px;
+  background-image: url(../img/rpizes-arrow.png);
+}
+
+.prizes__list button:hover, .prizes__list button.active {
+  color: #E63E21;
+  border-color: #E63E21;
+}
+
+.prizes__list button:hover::after, .prizes__list button.active::after {
+  background-image: url(../img/rpizes-arrow-hover.png);
+}
+
+.prizes__item {
+  max-width: none;
+  position: absolute;
+}
+
+.prizes__description {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;
+  line-height: 26px;
+  font-style: italic;
+  max-width: 310px;
+  display: inline-block;
+  text-align: left;
 }
 
 .btn {
@@ -807,6 +948,7 @@ section h2 {
   -o-transition: all .2s ease-out;
   transition: all .2s ease-out;
   position: relative;
+  overflow: visible;
 }
 
 .sections__item::after {

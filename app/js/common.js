@@ -104,6 +104,11 @@ var videoPlayer = function() {
   });
 };
 
+function setActive(collection, i) {
+  collection.siblings().removeClass("active");
+  collection.eq(i).addClass("active");
+}
+
 var carsSection = function() {
   var slider = $(".cars__slider-wrap").slick({
     infinite: false,
@@ -123,16 +128,31 @@ var carsSection = function() {
     setActive(info, nextSlide);
   });
 
-  function setActive(collection, i) {
-    collection.siblings().removeClass("active");
-    collection.eq(i).addClass("active");
-  }
-
   modelsImg.on("click", function(e) {
     var index = $(e.target).index();
     slider.slick("slickGoTo", index);
   });
 };
+
+var prizes = function () { 
+  var slider = $(".prizes__slider-wrap").slick({
+    infinite: false,
+    fade: true,
+    speed: 300,
+    arrows: false
+  });
+
+  var prizesBtn = $(".prizes__list button");
+
+  slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+    setActive(prizesBtn, nextSlide);
+  });
+  prizesBtn.on("click", function(e) {
+    var index = $(e.target).index();
+    slider.slick("slickGoTo", index);
+  });
+
+ }
 
 $(function() {
   scrollDetection();
@@ -149,4 +169,5 @@ $(function() {
 
   videoPlayer();
   carsSection();
+  prizes();
 });

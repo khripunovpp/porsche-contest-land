@@ -1,0 +1,97 @@
+@import "bourbon"
+@import "mixins"
+
+.prizes
+	&__inner
+		padding-top: 230px
+		font-size: 0
+	&__content
+		width: 35%
+		display: inline-block
+		vertical-align: top
+		position: relative
+		z-index: 1
+	&__slider
+		width: 65%
+		display: inline-block
+		.slick-list
+			overflow: visible
+		&_item
+			min-height: 570px
+			&-wrap
+				position: relative
+				text-align: right
+			&[data-slick-index="0"] 
+				.prizes__slider_item-wrap
+					margin-top: 210px
+				.prizes__item
+					top: -440px
+					left: -690px
+				.prizes__logo
+					margin-bottom: 30px
+			&[data-slick-index="1"] 
+				.prizes__slider_item-wrap
+					margin-top: 115px
+				.prizes__item
+					top: -220px
+					left: -60px
+				.prizes__logo
+					margin-left: -20px
+			&[data-slick-index="2"] 
+				.prizes__item
+					top: -120px
+					left: -40px
+	&__title
+		font-size: 30px
+		line-height: 40px
+		letter-spacing: 0.1em
+		margin: 0 0 30px
+	&__text
+		font-size: 18px
+		line-height: 30px
+		span
+			color: #E63E21
+	&__list
+		margin-top: 50px
+		button
+			cursor: pointer
+			position: relative
+			padding: 7px 45px 7px 20px
+			transition: all .2s ease-out
+			border: none
+			border-left: 2px solid #fff
+			color: #fff
+			background-color: transparent
+			display: block
+			width: 100%
+			max-width: 250px
+			text-align: left
+			margin-bottom: 30px
+			background-image: linear-gradient(270deg, #191919 0%, rgba(255, 255, 255, 0) 100%)
+			&::after
+				content: ''
+				position: absolute
+				right: 20px
+				top: 50%
+				margin-top: -5px
+				width: 16px
+				height: 10px
+				background-image: url(../img/rpizes-arrow.png)
+			&:hover,
+			&.active
+				color: #E63E21
+				border-color: #E63E21
+				&::after
+					background-image: url(../img/rpizes-arrow-hover.png)
+	&__item
+		max-width: none
+		position: absolute
+	&__description
+		position: relative
+		z-index: 1
+		font-size: 16px
+		line-height: 26px
+		font-style: italic
+		max-width: 310px
+		display: inline-block
+		text-align: left
