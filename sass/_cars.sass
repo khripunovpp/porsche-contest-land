@@ -1,12 +1,11 @@
 @import "bourbon"
-@import "icon.sass"
 @import "mixins"
 
 .cars
     background-image: url(../img/bg-2.jpg)
     background-position: center bottom 15px
     position: relative
-    margin-top: 180px
+    margin-top: 250px
     &__bg
         display: block
         position: absolute
@@ -47,7 +46,25 @@
         position: relative
     &__prev,
     &__next
-        display: none !important
+        position: absolute
+        z-index: 3
+        top: 370px
+        width: 33px
+        height: 18px
+        background-image: url(../img/arrow-down.png)
+        padding: 0
+        line-height: 1
+        background-color: transparent
+        border: none
+        cursor: pointer
+        &.slick-disabled
+            display: none !important
+    &__prev
+        left: 600px
+        transform: rotate(90deg)
+    &__next
+        right: 0
+        transform: rotate(-90deg)
     &__title
         font-size: 30px
         line-height: 40px

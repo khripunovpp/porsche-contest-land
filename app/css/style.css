@@ -242,12 +242,13 @@ section h2 {
   margin: 0 auto;
   width: 33px;
   height: 18px;
-  background-image: url(../img/scroll-down.png);
+  background-image: url(../img/arrow-down.png);
   background-repeat: no-repeat;
   padding: 0;
   border: none;
   background-color: transparent;
   position: relative;
+  z-index: 1;
   cursor: pointer;
 }
 
@@ -267,19 +268,11 @@ section h2 {
   filter: blur(2px);
 }
 
-@font-face {
-  font-family: 'icomoon';
-  src: url("../fonts/icomoon.eot?cwhh4a");
-  src: url("../fonts/icomoon.eot?cwhh4a#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?cwhh4a") format("truetype"), url("../fonts/icomoon.woff?cwhh4a") format("woff"), url("../fonts/icomoon.svg?cwhh4a#icomoon") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
 .cars {
   background-image: url(../img/bg-2.jpg);
   background-position: center bottom 15px;
   position: relative;
-  margin-top: 180px;
+  margin-top: 250px;
 }
 
 .cars__bg {
@@ -341,7 +334,35 @@ section h2 {
 }
 
 .cars__prev, .cars__next {
+  position: absolute;
+  z-index: 3;
+  top: 370px;
+  width: 33px;
+  height: 18px;
+  background-image: url(../img/arrow-down.png);
+  padding: 0;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.cars__prev.slick-disabled, .cars__next.slick-disabled {
   display: none !important;
+}
+
+.cars__prev {
+  left: 600px;
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.cars__next {
+  right: 0;
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 
 .cars__title {
@@ -480,7 +501,7 @@ section h2 {
 .media {
   background-image: url(../img/bg-5.png);
   background-position: 50% 120px;
-  margin-top: 250px;
+  margin-top: 150px;
 }
 
 .media__inner {
@@ -676,6 +697,7 @@ section h2 {
 
 .faq__item {
   padding: 0;
+  margin-bottom: 30px;
   background-image: -webkit-gradient(linear, right top, left top, from(#191919), to(rgba(255, 255, 255, 0)));
   background-image: -o-linear-gradient(right, #191919 0%, rgba(255, 255, 255, 0) 100%);
   background-image: linear-gradient(270deg, #191919 0%, rgba(255, 255, 255, 0) 100%);
@@ -716,9 +738,16 @@ section h2 {
 }
 
 .faq__item-text {
-  margin: 0;
   padding: 8px 20px 20px;
   display: none;
+}
+
+.faq__item-text p {
+  margin: 0;
+}
+
+.faq__item-text p + p {
+  margin-top: 7px;
 }
 
 .faq__item.active .faq__item-caption {
@@ -764,7 +793,7 @@ section h2 {
 }
 
 .sections__item {
-  font-size: 20px;
+  font-size: 17px;
   line-height: 1;
   letter-spacing: 0.1em;
   font-family: "SKPorsche-Regular", sans-serif;
