@@ -1,0 +1,96 @@
+@import "bourbon"
+@import "icon.sass"
+@import "mixins"
+
+.cars
+    background-image: url(../img/bg-2.jpg)
+    background-position: center bottom 15px
+    position: relative
+    margin-top: 180px
+    &__bg
+        display: block
+        position: absolute
+        opacity: 0
+        transition: opacity .3s ease
+        &.active
+            opacity: 1
+        &--1
+            width: 1390px
+            height: 463px
+            top: -140px
+            left: 32%
+            background-image: url(../img/cars-bg-1.png)
+        &--2
+            width: 1222px
+            height: 627px
+            top: -210px
+            left: 33%
+            background-image: url(../img/cars-bg-2.png)
+    &__inner
+        position: relative
+        min-height: 760px 
+        padding-top: 130px
+    &__slider
+        position: absolute
+        bottom: 180px
+        width: 1130px
+        left: 38%
+        .slick-list
+            overflow: visible
+        & [data-slick-index="0"]
+            .cars__car
+                left: -70px
+        & [data-slick-index="1"]
+            .cars__car
+                left: -70px
+    &__car
+        position: relative
+    &__prev,
+    &__next
+        display: none !important
+    &__title
+        font-size: 30px
+        line-height: 40px
+        letter-spacing: 0.1em
+        margin: 0 0 60px
+        position: relative
+        z-index: 1
+    &__models
+        margin-bottom: 60px
+        position: relative
+        z-index: 1
+        img
+            cursor: pointer
+            opacity: 0.3
+            &.active
+                opacity: 1
+        img+img
+            margin-left: 80px
+    &__info
+        position: relative
+        z-index: 1
+        display: none
+        &.active
+            display: block
+    &__description
+        font-size: 16px
+        line-height: 26px
+        font-style: italic
+        max-width: 450px
+        margin: 0
+    &__specifications
+        margin-top: 30px
+        max-width: 600px
+        overflow: hidden
+        li
+            font-size: 16px
+            line-height: 26px
+            font-style: italic
+            margin-bottom: 10px
+            float: left
+            width: calc(50% - 20px)
+            &:nth-child(even)
+                margin-left: 40px
+    &__footer
+        margin-top: 85px
+        text-align: center

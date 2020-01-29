@@ -52,8 +52,8 @@ var faq = function(e) {
 var videoPlayer = function() {
   $("video").each(function() {
     if ($(this).data("url")) {
-    var posterUrl = $(this).attr('poster');
-    $(this).removeAttr('poster')
+      var posterUrl = $(this).attr("poster");
+      $(this).removeAttr("poster");
       $(this)
         .attr("controlsList", "nodownload")
         .attr("controls", "controls")
@@ -64,7 +64,13 @@ var videoPlayer = function() {
             $(this).data("url") +
             '.webm">'
         );
-        $(this).after($('<div class="media__poster" style="background-image: url('+posterUrl+')"></div>'))
+      $(this).after(
+        $(
+          '<div class="media__poster" style="background-image: url(' +
+            posterUrl +
+            ')"></div>'
+        )
+      );
     }
   });
 
@@ -76,26 +82,56 @@ var videoPlayer = function() {
     nextArrow: $(".media__next")
   });
 
+  var playBtn = $(".media__play"),
+    videoWrap = $(".media__videos"),
+    video = document.querySelector(".slick-active video");
 
-  var playBtn = $('.media__play'),
-  videoWrap =  $('.media__videos'),
-  video = document.querySelector('.slick-active video');
-
-  
-  slider.on('beforeChange', function(){
+  slider.on("beforeChange", function() {
     video.pause();
-    videoWrap.removeClass('playing');
+    videoWrap.removeClass("playing");
   });
 
-  slider.on('afterChange', function(){
-    video = document.querySelector('.slick-active video');
+  slider.on("afterChange", function() {
+    video = document.querySelector(".slick-active video");
   });
 
-  playBtn.on('click', function() {
+  playBtn.on("click", function() {
     video.play();
-    $(video).closest('.media__item').addClass('was-played');
-    videoWrap.addClass('playing');
-})
+    $(video)
+      .closest(".media__item")
+      .addClass("was-played");
+    videoWrap.addClass("playing");
+  });
+};
+
+var carsSection = function() {
+  var slider = $(".cars__slider-wrap").slick({
+    infinite: false,
+    fade: true,
+    speed: 300,
+    prevArrow: $(".cars__prev"),
+    nextArrow: $(".cars__next")
+  });
+
+  var modelsImg = $(".cars__models img"),
+    bg = $(".cars__bg"),
+    info = $('.cars__info');
+
+  slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+    setActive(modelsImg, nextSlide);
+    setActive(bg, nextSlide);
+    setActive(info, nextSlide);
+  });
+
+  function setActive(collection, i) {
+    collection.siblings().removeClass("active");
+    collection.eq(i).addClass("active");
+  }
+
+  modelsImg.on("click", function(e) {
+    var index = $(e.target).index();
+    slider.slick("slickGoTo", index);
+  });
 };
 
 $(function() {
@@ -112,4 +148,5 @@ $(function() {
   $(".faq__item-caption").on("click", faq);
 
   videoPlayer();
+  carsSection();
 });

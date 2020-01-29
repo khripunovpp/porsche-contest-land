@@ -201,11 +201,29 @@ section h2
 		height: 4px
 		background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)	
 		filter: blur(2px)
-		
+
+@import "cars"
+
+.btn
+	font-family: $font2
+	font-size: 20px
+	line-height: 22px
+	letter-spacing: 0.1em
+	padding: 13px 60px
+	border: 2px solid #FFFFFF
+	border-radius: 25px
+	background-color: transparent
+	color: #fff
+	cursor: pointer
+	transition: all .2s ease-out
+	text-align: center
+	&:hover
+		background-color: #fff
+		color: #000
 
 .accomodation
 	margin-top: 150px
-	background-image: url(../img/bg-2.jpg)
+	background-image: url(../img/bg-4.jpg)
 	background-position: 50% 50%
 	&__inner
 		position: relative
@@ -233,11 +251,11 @@ section h2
 
 .media
 	background-image: url(../img/bg-5.png)
-	background-position: 50% 0
+	background-position: 50% 120px
 	margin-top: 250px
 	&__inner
 		min-height: 800px
-		padding-top: 130px
+		padding-top: 250px
 	&__videos
 		margin: 0 auto
 		border-top: 2px solid #fff

@@ -267,9 +267,179 @@ section h2 {
   filter: blur(2px);
 }
 
+@font-face {
+  font-family: 'icomoon';
+  src: url("../fonts/icomoon.eot?cwhh4a");
+  src: url("../fonts/icomoon.eot?cwhh4a#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?cwhh4a") format("truetype"), url("../fonts/icomoon.woff?cwhh4a") format("woff"), url("../fonts/icomoon.svg?cwhh4a#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.cars {
+  background-image: url(../img/bg-2.jpg);
+  background-position: center bottom 15px;
+  position: relative;
+  margin-top: 180px;
+}
+
+.cars__bg {
+  display: block;
+  position: absolute;
+  opacity: 0;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+}
+
+.cars__bg.active {
+  opacity: 1;
+}
+
+.cars__bg--1 {
+  width: 1390px;
+  height: 463px;
+  top: -140px;
+  left: 32%;
+  background-image: url(../img/cars-bg-1.png);
+}
+
+.cars__bg--2 {
+  width: 1222px;
+  height: 627px;
+  top: -210px;
+  left: 33%;
+  background-image: url(../img/cars-bg-2.png);
+}
+
+.cars__inner {
+  position: relative;
+  min-height: 760px;
+  padding-top: 130px;
+}
+
+.cars__slider {
+  position: absolute;
+  bottom: 180px;
+  width: 1130px;
+  left: 38%;
+}
+
+.cars__slider .slick-list {
+  overflow: visible;
+}
+
+.cars__slider [data-slick-index="0"] .cars__car {
+  left: -70px;
+}
+
+.cars__slider [data-slick-index="1"] .cars__car {
+  left: -70px;
+}
+
+.cars__car {
+  position: relative;
+}
+
+.cars__prev, .cars__next {
+  display: none !important;
+}
+
+.cars__title {
+  font-size: 30px;
+  line-height: 40px;
+  letter-spacing: 0.1em;
+  margin: 0 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.cars__models {
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.cars__models img {
+  cursor: pointer;
+  opacity: 0.3;
+}
+
+.cars__models img.active {
+  opacity: 1;
+}
+
+.cars__models img + img {
+  margin-left: 80px;
+}
+
+.cars__info {
+  position: relative;
+  z-index: 1;
+  display: none;
+}
+
+.cars__info.active {
+  display: block;
+}
+
+.cars__description {
+  font-size: 16px;
+  line-height: 26px;
+  font-style: italic;
+  max-width: 450px;
+  margin: 0;
+}
+
+.cars__specifications {
+  margin-top: 30px;
+  max-width: 600px;
+  overflow: hidden;
+}
+
+.cars__specifications li {
+  font-size: 16px;
+  line-height: 26px;
+  font-style: italic;
+  margin-bottom: 10px;
+  float: left;
+  width: -webkit-calc(50% - 20px);
+  width: calc(50% - 20px);
+}
+
+.cars__specifications li:nth-child(even) {
+  margin-left: 40px;
+}
+
+.cars__footer {
+  margin-top: 85px;
+  text-align: center;
+}
+
+.btn {
+  font-family: "SKPorsche-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  padding: 13px 60px;
+  border: 2px solid #FFFFFF;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
 .accomodation {
   margin-top: 150px;
-  background-image: url(../img/bg-2.jpg);
+  background-image: url(../img/bg-4.jpg);
   background-position: 50% 50%;
 }
 
@@ -309,13 +479,13 @@ section h2 {
 
 .media {
   background-image: url(../img/bg-5.png);
-  background-position: 50% 0;
+  background-position: 50% 120px;
   margin-top: 250px;
 }
 
 .media__inner {
   min-height: 800px;
-  padding-top: 130px;
+  padding-top: 250px;
 }
 
 .media__videos {

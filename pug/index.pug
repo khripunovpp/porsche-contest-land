@@ -58,6 +58,46 @@ html
 
 			button.scroll(data-href="accomodation")
 
+			section.cars#cars
+				div.cars__bg.cars__bg--1.active
+				div.cars__bg.cars__bg--2
+				.container
+					.cars__inner
+						h2.cars__title Win your #[br]own porsche
+						.cars__models
+							img(src="img/carrera_logo.svg", alt="").active
+							img(src="img/boxster_logo.svg", alt="")
+						.cars__slider
+							button.cars__prev
+							button.cars__next
+							.cars__slider-wrap
+								.cars__item
+									.cars__item-wrap
+										img(src="img/cars-car-1.png", alt="").cars__car
+								.cars__item
+									.cars__item-wrap
+										img(src="img/cars-car-2.png", alt="").cars__car
+						.cars__info.active
+							p.cars__description Continually initiate end-to-end leadership skills for premium e-markets. Efficiently reinvent resource-leveling schemas with exceptional initiatives. 
+							ul.cars__specifications
+								li Количество цилиндров	- 4
+								li Мощность (кВт) - 220 кВт	
+								li Мощность (л.с.) - 300 л.с.
+								li Разгон 0-100 км/ч - 5,3 сек
+								li Максимальная скорость - 275 км/ч	
+								li Привод - Задний
+						.cars__info
+							p.cars__description Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam reiciendis sequi repellendus quo soluta quas.
+							ul.cars__specifications
+								li Количество цилиндров	- 4
+								li Мощность (кВт) - 220 кВт	
+								li Мощность (л.с.) - 300 л.с.
+								li Разгон 0-100 км/ч - 5,3 сек
+								li Максимальная скорость - 275 км/ч	
+								li Привод - Задний
+						.cars__footer
+							button.cars__btn.btn Start
+
 			section.accomodation#accomodation
 				.container
 					.accomodation__inner
@@ -97,7 +137,7 @@ html
 					.sections__inner
 						.sections__list(data-active="")
 							button.sections__item(data-href="top") Top
-							button.sections__item(data-href="porsche") Porsche
+							button.sections__item(data-href="cars") Porsche
 							button.sections__item(data-href="prizes") Prizes
 							button.sections__item(data-href="accomodation") Accomodation
 							button.sections__item(data-href="media") Media
