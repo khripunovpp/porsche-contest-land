@@ -162,7 +162,9 @@ $(function() {
     e.preventDefault();
     var id = $(this).attr("data-href");
     var section = $("#" + id).offset().top;
-    $("html, body").animate({ scrollTop: section - $('.header').height() }, 666);
+    var shift = $('.header').height();
+    if ($(window).innerWidth() > 992) shift = 0;
+    $("html, body").animate({ scrollTop: section - shift }, 666);
   });
 
   $(".faq__item-caption").on("click", faq);

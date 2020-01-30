@@ -42,8 +42,11 @@ $font3: 'DINPro-Regular', sans-serif
 		margin-left: 0 !important
 	.cars__prev, .cars__next
 		display: none
-	.faq::after
-		margin-right: -280px
+	.faq__other div
+		width: 100%
+		margin-left: 0 !important
+	.faq__other div + div
+		margin-top: 15px
 	.prizes__inner
 		padding-top: 150px
 	.prizes__slider_item[data-slick-index="0"] .prizes__item
@@ -334,7 +337,7 @@ $font3: 'DINPro-Regular', sans-serif
 			margin-top: 65px
 			height: 100px
 			background-image: url(../img/bg-2.jpg)
-			background-size: 320px
+			background-size: 450px
 			background-repeat: no-repeat
 			background-position: 50% 100%
 			text-align: center
@@ -517,17 +520,14 @@ $font3: 'DINPro-Regular', sans-serif
 		background-image: none
 		margin-top: 90px
 		&__inner
-			display: table
 			min-height: 0
 			padding-top: 0
 			padding-bottom: 170px
-			width: 100%
 		&__title
 			text-align: center
 			font-size: 16px
 			line-height: 24px
 			margin-bottom: 95px
-			display: table-caption
 		&__videos-wrap
 			position: relative
 			&::after
@@ -562,8 +562,6 @@ $font3: 'DINPro-Regular', sans-serif
 	.faq
 		margin-top: 90px
 		margin-bottom: 80px
-		&::after
-			display: none
 		&__inner
 			padding-top: 0
 			min-height: auto
@@ -577,4 +575,12 @@ $font3: 'DINPro-Regular', sans-serif
 			margin-left: 0 !important
 		&__item
 			margin-bottom: 20px
+		&__other
+			display: none
 
+	.desktop-only
+		display: none
+
+@media only screen and (min-width : 992px)
+	.mobile-only
+		display: none

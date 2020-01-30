@@ -777,10 +777,7 @@ section h2 {
 }
 
 .faq__inner {
-  min-height: 800px;
-  padding-top: 140px;
-  padding-left: -webkit-calc(100% - 695px);
-  padding-left: calc(100% - 695px);
+  padding-top: 150px;
   overflow: hidden;
 }
 
@@ -789,6 +786,10 @@ section h2 {
   line-height: 40px;
   letter-spacing: 0.1em;
   margin: 0 0 40px;
+}
+
+.faq__content {
+  overflow: hidden;
 }
 
 .faq__list {
@@ -869,6 +870,35 @@ section h2 {
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
+}
+
+.faq__other {
+  margin-top: 60px;
+  border: 2px solid #fff;
+  clear: both;
+  font-style: italic;
+  font-size: 16px;
+  line-height: 22px;
+  padding: 20px 30px;
+  overflow: auto;
+}
+
+.faq__other div {
+  width: -webkit-calc(50% - 15px);
+  width: calc(50% - 15px);
+  float: left;
+}
+
+.faq__other div + div {
+  margin-left: 30px;
+}
+
+.faq__other p {
+  margin: 0;
+}
+
+.faq__other p + p {
+  margin-top: 15px;
 }
 
 .sections {
@@ -1087,8 +1117,12 @@ section h2 {
   .cars__prev, .cars__next {
     display: none;
   }
-  .faq::after {
-    margin-right: -280px;
+  .faq__other div {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .faq__other div + div {
+    margin-top: 15px;
   }
   .prizes__inner {
     padding-top: 150px;
@@ -1480,7 +1514,7 @@ section h2 {
     margin-top: 65px;
     height: 100px;
     background-image: url(../img/bg-2.jpg);
-    background-size: 320px;
+    background-size: 450px;
     background-repeat: no-repeat;
     background-position: 50% 100%;
     text-align: center;
@@ -1695,18 +1729,15 @@ section h2 {
     margin-top: 90px;
   }
   .media__inner {
-    display: table;
     min-height: 0;
     padding-top: 0;
     padding-bottom: 170px;
-    width: 100%;
   }
   .media__title {
     text-align: center;
     font-size: 16px;
     line-height: 24px;
     margin-bottom: 95px;
-    display: table-caption;
   }
   .media__videos-wrap {
     position: relative;
@@ -1743,9 +1774,6 @@ section h2 {
     margin-top: 90px;
     margin-bottom: 80px;
   }
-  .faq::after {
-    display: none;
-  }
   .faq__inner {
     padding-top: 0;
     min-height: auto;
@@ -1762,5 +1790,17 @@ section h2 {
   }
   .faq__item {
     margin-bottom: 20px;
+  }
+  .faq__other {
+    display: none;
+  }
+  .desktop-only {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .mobile-only {
+    display: none;
   }
 }
