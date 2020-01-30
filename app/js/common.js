@@ -35,7 +35,6 @@ var scrollDetection = function() {
 };
 
 var hightlight = function(id) {
-  $(".sections__list").attr("data-active", id);
   $(".sections__item")
     .siblings()
     .removeClass("active");
@@ -58,9 +57,9 @@ var videoPlayer = function() {
         .attr("controlsList", "nodownload")
         .attr("controls", "controls")
         .html(
-          '<source src="//cdn.ahacdu.com' +
+          '<source src="http://cdn.ahacdu.com' +
             $(this).data("url") +
-            '.mp4"><source src="//cdn.ahacdu.com' +
+            '.mp4"><source src="http://cdn.ahacdu.com' +
             $(this).data("url") +
             '.webm">'
         );

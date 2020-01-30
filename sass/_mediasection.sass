@@ -1,0 +1,108 @@
+@import "bourbon"
+@import "mixins"
+
+
+.media
+	background-image: url(../img/bg-5.png)
+	background-position: 50% 120px
+	margin-top: 150px
+	&__inner
+		min-height: 800px
+		padding-top: 250px
+	&__videos
+		margin: 0 auto
+		border-top: 2px solid #fff
+		position: relative
+		width: 520px
+		height: 290px
+		&::after,
+		&::before
+			content: ''
+			position: absolute
+			z-index: 3
+			width: 2px
+			height: 100%
+			background-color: #fff
+			background-image: linear-gradient(to bottom, #fff, #000)
+			top: 0
+		&::after
+			right: 0
+		&::before
+			left: 0
+		&.playing
+			.media__play
+				transform: scale(0)
+			.was-played
+				.media__poster
+					display: none
+	&__title
+		text-align: center
+		font-size: 30px
+		line-height: 40px
+		letter-spacing: 0.1em
+		margin: 0
+	&__prev,
+	&__next
+		width: 21px
+		height: 32px
+		background-image: url(../img/video-arrow.png)
+		background-color: transparent
+		padding: 0
+		line-height: 1
+		border: none
+		position: absolute
+		top: 50%
+		margin-top: -16px
+		cursor: pointer
+		transition: all .2s ease-out
+		&.slick-disabled
+			display: none !important
+	&__prev
+		left: -50px
+		transform: scale(-1,1)
+		&:hover
+			transform: scale(-1,1) translateX(5px)
+	&__next
+		right: -50px
+		&:hover
+			transform: translateX(5px)
+	&__play
+		width: 53px
+		height: 61px
+		background-image: url(../img/play-icon.png)
+		padding: 0
+		line-height: 1
+		border: none
+		background-color: transparent
+		position: absolute
+		z-index: 3
+		top: 50%
+		left: 50%	
+		margin-top: -30px
+		margin-left: -20px
+		cursor: pointer
+		transition: all .3s ease-out
+		&:hover
+			transform: scale(.9)
+	&__item
+		position: relative
+		z-index: 1
+		width: 520px
+		height: 290px
+	&__poster
+		position: absolute
+		z-index: 1
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%	
+		background-size: cover
+		background-position: 50% 50%
+
+.video
+	position: absolute
+	top: 0
+	left: 0
+	width: 100%
+	height: 100%
+	border: none

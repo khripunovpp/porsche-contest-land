@@ -1,0 +1,64 @@
+@import "bourbon"
+@import "mixins"
+
+
+.sections
+	position: fixed
+	z-index: 8
+	bottom: 60px
+	left: 0
+	width: 100%
+	transform: translateY(200px)
+	transition: all .6s ease-out
+	&.show
+		transform: translateY(0)
+	&__list
+		display: flex
+		justify-content: space-between
+		position: relative
+		text-align: center
+	&__item
+		font-size: 17px
+		line-height: 1
+		letter-spacing: 0.1em
+		font-family: $font2
+		color: #fff
+		padding: 0
+		background-color: transparent
+		border: none
+		color: #777
+		cursor: pointer
+		transition: all .2s ease-out
+		position: relative
+		overflow: visible
+		&::after
+			content: ''
+			position: absolute
+			z-index: 1
+			top: 40px
+			left: -45px
+			display: block
+			width: calc(100% + 90px)
+			height: 4px
+			background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)	
+			filter: blur(2px)
+			transition: all .2s ease-out
+			transform: scaleX(0)
+		&::before
+			content: ''
+			position: absolute
+			bottom: -84px
+			left: -90px
+			width: calc(100% + 180px)
+			height: 24px
+			box-shadow: 0px -10px 75px #EB1515
+			opacity: 0
+			transition: all .2s ease-out
+		&:hover,
+		&.active
+			color: #fff
+			&::after
+				transform: scaleX(1)
+		&.active
+			&::before
+				opacity: 1

@@ -1,12 +1,65 @@
 @import "bourbon"
+@media only screen and (max-width : 1450px)
+	.prizes__slider_item[data-slick-index="0"] .prizes__item
+		max-width: 1100px
+		top: -260px
+		left: -70%
+
+@media only screen and (max-width : 1150px)
+	.top
+		background-position: center top -50px
+	.top__inner
+		min-height: 815px
+	.top__title
+		margin-top: -115px
+		margin-bottom: 5px
+	.top__cartrack--1 .top__car
+		width: 780px
+	.top__cartrack--2 .top__car
+		width: 780px
+	.top__cartrack--1 .top__model
+		right: 710px
+		top: 197px
+	.top__cartrack--2 .top__model
+		left: 670px
+		top: 130px
+	.top__title strong
+		font-size: 55px
+	.scroll
+		margin-top: -85px
+	.sections__item
+		font-size: 13px
+	.cars
+		margin-bottom: 0
+		margin-top: 280px
+	.cars__specifications li
+		width: 100%
+		margin-left: 0 !important
+	.cars__prev, .cars__next
+		display: none
+	.faq::after
+		margin-right: -280px
+	.prizes__inner
+		padding-top: 150px
+	.prizes__slider_item[data-slick-index="0"] .prizes__item
+		left: -590px
+	.prizes__text br
+		display: none
+	.accomodation
+		margin-top: 50px
+	.media
+		margin-top: 50px
+	.faq
+		margin-top: 11px
 
 
-/* Desktop-frist */
-@media only screen and (max-width : 991px)
-	/**/
-
-
-/* Mobile-first */
-@media only screen and (min-width : 992px)
-	/**/
-
+@media screen and (-webkit-min-device-pixel-ratio:0)
+	.sections__item
+		-webkit-background-clip: text
+		-webkit-text-fill-color: transparent
+		background-image: -webkit-linear-gradient(#fff, #000)
+		&:hover,
+		&.active
+			background-image: none
+			-webkit-text-fill-color: #fff
+			-webkit-background-clip: initial

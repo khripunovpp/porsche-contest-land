@@ -107,6 +107,7 @@ select {
   left: 0;
   width: 100%;
   z-index: 2;
+  padding-top: 7px;
 }
 
 .header__logo, .header__menu {
@@ -154,6 +155,38 @@ section h2 {
   font-family: "SKPorsche-Regular", sans-serif;
   font-weight: 400;
   font-size: 20px;
+}
+
+.scroll {
+  display: block;
+  margin: 0 auto;
+  width: 33px;
+  height: 18px;
+  background-image: url(../img/arrow-down.png);
+  background-repeat: no-repeat;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+  overflow: visible;
+}
+
+.scroll::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: 40px;
+  left: 50%;
+  margin-left: -83px;
+  display: block;
+  width: 165px;
+  height: 4px;
+  background: -o-radial-gradient(50% 50%, 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%);
+  background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%);
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
 }
 
 .top {
@@ -237,44 +270,52 @@ section h2 {
   background-image: url(../img/date-arrow.png);
 }
 
-.scroll {
-  display: block;
-  margin: 0 auto;
-  width: 33px;
-  height: 18px;
-  background-image: url(../img/arrow-down.png);
-  background-repeat: no-repeat;
-  padding: 0;
-  border: none;
-  background-color: transparent;
-  position: relative;
-  z-index: 1;
-  cursor: pointer;
-  overflow: visible;
+.accomodation {
+  margin-top: 150px;
+  background-image: url(../img/bg-4.jpg);
+  background-position: 50% 50%;
 }
 
-.scroll::after {
-  content: '';
+.accomodation__inner {
+  position: relative;
+  min-height: 872px;
+}
+
+.accomodation__content {
+  width: 550px;
   position: absolute;
-  z-index: 1;
-  top: 40px;
+  top: 50%;
   left: 50%;
-  margin-left: -83px;
-  display: block;
-  width: 165px;
-  height: 4px;
-  background: -o-radial-gradient(50% 50%, 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%);
-  background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%);
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
+  margin-left: -275px;
+  text-align: center;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.accomodation__title {
+  margin: 0;
+  font-size: 30px;
+  line-height: 40px;
+  margin: 0 0 10px;
+}
+
+.accomodation__text {
+  margin: 0;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+.accomodation__text span {
+  color: #E63E21;
 }
 
 .cars {
   background-image: url(../img/bg-2.jpg);
-  background-position: center bottom 15px;
+  background-position: center bottom 105px;
   position: relative;
   margin-top: 250px;
-  margin-bottom: 150px;
+  padding-bottom: 150px;
 }
 
 .cars__bg {
@@ -293,7 +334,7 @@ section h2 {
 .cars__bg--1 {
   width: 1390px;
   height: 463px;
-  top: -140px;
+  top: -50px;
   left: 32%;
   background-image: url(../img/cars-bg-1.png);
 }
@@ -301,7 +342,7 @@ section h2 {
 .cars__bg--2 {
   width: 1222px;
   height: 627px;
-  top: -210px;
+  top: -150px;
   left: 33%;
   background-image: url(../img/cars-bg-2.png);
 }
@@ -309,12 +350,12 @@ section h2 {
 .cars__inner {
   position: relative;
   min-height: 760px;
-  padding-top: 130px;
+  padding-top: 210px;
 }
 
 .cars__slider {
   position: absolute;
-  bottom: 180px;
+  bottom: 140px;
   width: 1130px;
   left: 38%;
 }
@@ -448,12 +489,14 @@ section h2 {
   display: inline-block;
   vertical-align: top;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .prizes__slider {
   width: 65%;
   display: inline-block;
+  position: relative;
+  z-index: 1;
 }
 
 .prizes__slider .slick-list {
@@ -510,6 +553,7 @@ section h2 {
 .prizes__text {
   font-size: 18px;
   line-height: 30px;
+  margin: 0;
 }
 
 .prizes__text span {
@@ -577,68 +621,6 @@ section h2 {
   text-align: left;
 }
 
-.btn {
-  font-family: "SKPorsche-Regular", sans-serif;
-  font-size: 20px;
-  line-height: 22px;
-  letter-spacing: 0.1em;
-  padding: 13px 60px;
-  border: 2px solid #FFFFFF;
-  border-radius: 25px;
-  background-color: transparent;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition: all .2s ease-out;
-  -o-transition: all .2s ease-out;
-  transition: all .2s ease-out;
-  text-align: center;
-}
-
-.btn:hover {
-  background-color: #fff;
-  color: #000;
-}
-
-.accomodation {
-  margin-top: 150px;
-  background-image: url(../img/bg-4.jpg);
-  background-position: 50% 50%;
-}
-
-.accomodation__inner {
-  position: relative;
-  min-height: 872px;
-}
-
-.accomodation__content {
-  width: 550px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -275px;
-  text-align: center;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.accomodation__title {
-  margin: 0;
-  font-size: 30px;
-  line-height: 40px;
-  margin: 0 0 10px;
-}
-
-.accomodation__text {
-  margin: 0;
-  font-size: 18px;
-  line-height: 30px;
-}
-
-.accomodation__text span {
-  color: #E63E21;
-}
-
 .media {
   background-image: url(../img/bg-5.png);
   background-position: 50% 120px;
@@ -661,9 +643,10 @@ section h2 {
 .media__videos::after, .media__videos::before {
   content: '';
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   width: 2px;
   height: 100%;
+  background-color: #fff;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#000));
   background-image: -o-linear-gradient(top, #fff, #000);
   background-image: linear-gradient(to bottom, #fff, #000);
@@ -749,7 +732,7 @@ section h2 {
   border: none;
   background-color: transparent;
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   top: 50%;
   left: 50%;
   margin-top: -30px;
@@ -768,6 +751,7 @@ section h2 {
 
 .media__item {
   position: relative;
+  z-index: 1;
   width: 520px;
   height: 290px;
 }
@@ -891,6 +875,10 @@ section h2 {
   margin-top: 7px;
 }
 
+.faq__item-text strong {
+  color: #E63E21;
+}
+
 .faq__item.active .faq__item-caption {
   color: #E63E21;
 }
@@ -903,7 +891,7 @@ section h2 {
 
 .sections {
   position: fixed;
-  z-index: 3;
+  z-index: 8;
   bottom: 60px;
   left: 0;
   width: 100%;
@@ -931,6 +919,7 @@ section h2 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   position: relative;
+  text-align: center;
 }
 
 .sections__item {
@@ -1003,6 +992,104 @@ section h2 {
   opacity: 1;
 }
 
+.btn {
+  font-family: "SKPorsche-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 22px;
+  letter-spacing: 0.1em;
+  padding: 13px 60px;
+  border: 2px solid #FFFFFF;
+  border-radius: 25px;
+  background-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+@media only screen and (max-width: 1450px) {
+  .prizes__slider_item[data-slick-index="0"] .prizes__item {
+    max-width: 1100px;
+    top: -260px;
+    left: -70%;
+  }
+}
+
+@media only screen and (max-width: 1150px) {
+  .top {
+    background-position: center top -50px;
+  }
+  .top__inner {
+    min-height: 815px;
+  }
+  .top__title {
+    margin-top: -115px;
+    margin-bottom: 5px;
+  }
+  .top__cartrack--1 .top__car {
+    width: 780px;
+  }
+  .top__cartrack--2 .top__car {
+    width: 780px;
+  }
+  .top__cartrack--1 .top__model {
+    right: 710px;
+    top: 197px;
+  }
+  .top__cartrack--2 .top__model {
+    left: 670px;
+    top: 130px;
+  }
+  .top__title strong {
+    font-size: 55px;
+  }
+  .scroll {
+    margin-top: -85px;
+  }
+  .sections__item {
+    font-size: 13px;
+  }
+  .cars {
+    margin-bottom: 0;
+    margin-top: 280px;
+  }
+  .cars__specifications li {
+    width: 100%;
+    margin-left: 0 !important;
+  }
+  .cars__prev, .cars__next {
+    display: none;
+  }
+  .faq::after {
+    margin-right: -280px;
+  }
+  .prizes__inner {
+    padding-top: 150px;
+  }
+  .prizes__slider_item[data-slick-index="0"] .prizes__item {
+    left: -590px;
+  }
+  .prizes__text br {
+    display: none;
+  }
+  .accomodation {
+    margin-top: 50px;
+  }
+  .media {
+    margin-top: 50px;
+  }
+  .faq {
+    margin-top: 11px;
+  }
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 0) {
   .sections__item {
     -webkit-background-clip: text;
@@ -1014,14 +1101,4 @@ section h2 {
     -webkit-text-fill-color: #fff;
     -webkit-background-clip: initial;
   }
-}
-
-/* Desktop-frist */
-@media only screen and (max-width: 991px) {
-  /**/
-}
-
-/* Mobile-first */
-@media only screen and (min-width: 992px) {
-  /**/
 }

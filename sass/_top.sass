@@ -1,0 +1,58 @@
+@import "bourbon"
+@import "mixins"
+
+
+.top
+	background-image: url(../img/bg-1.jpg)
+	background-position: 50% 0
+	&__inner
+		position: relative
+		min-height: 872px
+	&__cartrack
+		position: relative
+		&--1
+			text-align: right
+			padding-top: 50px
+			.top__model
+				right: 870px
+				top: 237px
+			.top__car
+					right: -55px
+		&--2
+			.top__model
+				left: 840px
+				top: 150px
+			.top__car
+					left: -95px
+	&__model
+		position: absolute
+	&__car
+			position: relative
+	&__title
+		text-align: center
+		margin-top: -135px
+		letter-spacing: 0.1em
+		line-height: 45px
+		margin-bottom: 25px
+		strong
+			font-size: 65px
+			display: block
+			font-weight: 400
+	&__date
+		position: absolute
+		bottom: 65px
+		right: 0
+
+
+.date
+	font-size: 18px
+	line-height: 25px
+	&__sep
+		display: inline-block
+		vertical-align: middle
+		position: relative
+		top: -2px
+		margin: 0 30px
+		width: 93px
+		height: 10px
+		background-image: url(../img/date-arrow.png)
