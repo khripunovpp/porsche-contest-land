@@ -1025,6 +1025,8 @@ section h2 {
   -o-transition: all .2s ease-out;
   transition: all .2s ease-out;
   text-align: center;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .btn:hover {
@@ -1736,5 +1738,29 @@ section h2 {
     height: 25px;
     background-size: cover;
     margin-top: -13px;
+  }
+  .faq {
+    margin-top: 90px;
+    margin-bottom: 80px;
+  }
+  .faq::after {
+    display: none;
+  }
+  .faq__inner {
+    padding-top: 0;
+    min-height: auto;
+  }
+  .faq__title {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .faq__list {
+    width: auto;
+    margin-left: 0 !important;
+  }
+  .faq__item {
+    margin-bottom: 20px;
   }
 }
