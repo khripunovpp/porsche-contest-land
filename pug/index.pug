@@ -63,8 +63,6 @@ html
 			button.scroll(data-href="cars")
 
 			section.cars#cars
-				div.cars__bg.cars__bg--1.active
-				div.cars__bg.cars__bg--2
 				.container
 					.cars__inner
 						button.cars__prev
@@ -73,14 +71,6 @@ html
 						.cars__models
 							img(src="img/carrera_logo.svg", alt="").active
 							img(src="img/boxster_logo.svg", alt="")
-						.cars__slider
-							.cars__slider-wrap
-								.cars__item
-									.cars__item-wrap
-										img(src="img/cars-car-1.png", alt="").cars__car
-								.cars__item
-									.cars__item-wrap
-										img(src="img/cars-car-2.png", alt="").cars__car
 						.cars__info.active
 							p.cars__description Continually initiate end-to-end leadership skills for premium e-markets. Efficiently reinvent resource-leveling schemas with exceptional initiatives. 
 							ul.cars__specifications
@@ -99,6 +89,17 @@ html
 								li Разгон 0-100 км/ч - 5,3 сек
 								li Максимальная скорость - 275 км/ч	
 								li Привод - Задний
+
+						.cars__slider
+							div.cars__bg.cars__bg--1.active
+							div.cars__bg.cars__bg--2
+							.cars__slider-wrap
+								.cars__item
+									.cars__item-wrap
+										img(src="img/cars-car-1.png", alt="").cars__car
+								.cars__item
+									.cars__item-wrap
+										img(src="img/cars-car-2.png", alt="").cars__car
 						.cars__footer
 							button.cars__btn.btn Start
 
@@ -109,22 +110,22 @@ html
 							h2.prizes__title ADDITIONAL #[br]PRIZES
 							p.prizes__text #[span Each contest participant of TOP-50] affiliates #[br] can win 1 additional prize and 1 grand prize! 
 							.prizes__list
-								button.active Jet Surf
-								button Rolex Submariner
+								button.active Rolex Submariner
+								button Jet Surf
 								button 30.000-50.000 USD
 						.prizes__slider
 							.prizes__slider-wrap
 								.prizes__slider_item
 									.prizes__slider_item-wrap
-										img(src="img/prize-1.png", alt="").prizes__item
-										.prizes__description
-											img(src="img/prize-1-logo.png", alt="").prizes__logo
-											p Спортивная про-модель для гонок и соревнований. Двигатель разработан для скорости, маневренности и максимальной мощности.
-								.prizes__slider_item
-									.prizes__slider_item-wrap
 										img(src="img/prize-2.png", alt="").prizes__item
 										.prizes__description
 											img(src="img/prize-2-logo.png", alt="").prizes__logo
+											p Спортивная про-модель для гонок и соревнований. Двигатель разработан для скорости, маневренности и максимальной мощности.
+								.prizes__slider_item
+									.prizes__slider_item-wrap
+										img(src="img/prize-1.png", alt="").prizes__item
+										.prizes__description
+											img(src="img/prize-1-logo.png", alt="").prizes__logo
 											p Спортивная про-модель для гонок и соревнований. Двигатель разработан для скорости, маневренности и максимальной мощности.
 								.prizes__slider_item
 									.prizes__slider_item-wrap
