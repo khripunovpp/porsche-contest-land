@@ -17,34 +17,18 @@
     position: relative
     z-index: 1
     .slick-list
-      overflow: visible
+      overflow: visible !important
     &_item
-      min-height: 570px
+      min-height: 510px
       &-wrap
-        position: relative
-        text-align: right
       &[data-slick-index="0"] 
-        .prizes__slider_item-wrap
-          margin-top: 115px
         .prizes__item
-          top: -220px
-          left: -60px
-        .prizes__logo
-          margin-left: -20px
+          top: -130px
+          left: 70px
       &[data-slick-index="1"] 
-        .prizes__slider_item-wrap
-          margin-top: 210px
         .prizes__item
-          top: -440px
-          left: -690px
-        .prizes__logo
-          margin-bottom: 30px
-      &[data-slick-index="2"] 
-        .prizes__item
-          top: -120px
-          left: -40px
-        .prizes__description
-          display: none
+          top: -180px
+          right: 0
   &__title
     font-size: 30px
     line-height: 40px
@@ -61,7 +45,7 @@
     display: none !important
   &__list
     margin-top: 50px
-    button
+    &-item
       cursor: pointer
       position: relative
       padding: 7px 45px 7px 20px
@@ -91,6 +75,50 @@
         border-color: #E63E21
         &::after
           background-image: url(../img/rpizes-arrow-hover.png)
+        .prizes__list-item-logo::after
+          opacity: 1
+        .prizes__list-item-logo::before
+          opacity: 0
+      &.disabled
+        pointer-events: none
+        &::after
+          display: none
+      &-logo
+        position: relative
+        display: inline-block
+        vertical-align: middle
+        margin-right: 10px
+        &::after,
+        &::before
+          content: ''
+          background-size: cover
+          display: block
+          transition: opacity .2s ease-out
+        &::after
+          opacity: 0
+          position: absolute
+          top: 0
+          left: 0
+      &--1
+        .prizes__list-item-logo::before,
+        .prizes__list-item-logo::after
+          width: 22px
+          height: 24px
+        .prizes__list-item-logo::before
+          background-image: url(../img/prize-1-logo-button.png)
+        .prizes__list-item-logo::after
+          background-image: url(../img/prize-1-logo-button-hover.png)
+      &--2
+        .prizes__list-item-logo::before,
+        .prizes__list-item-logo::after
+          width: 149px
+          height: 19px
+        .prizes__list-item-logo::before
+          background-image: url(../img/prize-2-logo-button.png)
+        .prizes__list-item-logo::after
+          background-image: url(../img/prize-2-logo-button-hover.png)
+
+
   &__item
     max-width: none
     position: absolute
@@ -103,3 +131,5 @@
     max-width: 310px
     display: inline-block
     text-align: left
+  &__logo
+    display: none !important

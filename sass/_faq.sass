@@ -2,19 +2,9 @@
 @import "mixins"
 
 .faq
-	margin-top: 250px
+	margin-top: 120px
 	position: relative
 	margin-bottom: 150px
-	&::after
-		content: ''
-		position: absolute
-		z-index: -1
-		top: 0
-		right: 50%
-		margin-right: -200px
-		background-image: url(../img/bg-6.png)	
-		width: 1109px
-		height: 802px
 	&__inner
 		padding-top: 150px
 		overflow: hidden
@@ -68,25 +58,20 @@
 				margin-top: 7px
 			strong
 				color: #E63E21
+				font-weight: 400
 		&.active
 			.faq__item-caption
 				color: #E63E21
 				&::after
 					transform: scale(1,-1)
 	&__other
-		margin-top: 60px
-		border: 2px solid #fff
-		clear: both
-		font-style: italic
-		font-size: 16px
+		font-size: 13px
 		line-height: 22px
-		padding: 20px 30px
-		overflow: auto
-		div
-			width: calc(50% - 15px)
-			float: left
-		div+div
-			margin-left: 30px
+		font-style: italic
+		max-width: 50%
+		text-align: center
+		margin: 50px auto 0
+		opacity: 0.6
 		p
 			margin: 0
 		p+p

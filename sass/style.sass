@@ -74,7 +74,7 @@ select
 	@extend %container
 
 .page
-	overflow: hidden
+	overflow-x: hidden
 
 section
 	background-repeat: no-repeat
@@ -85,14 +85,6 @@ section h2
 	font-weight: 400
 	font-size: 20px
 
-@import "header"
-@import "top"
-@import "accomodation"
-@import "cars"
-@import "prizes"
-@import "mediasection"
-@import "faq"
-@import "nav"
 	
 .scroll
 	display: block
@@ -123,10 +115,10 @@ section h2
 
 .btn
 	font-family: $font2
-	font-size: 20px
+	font-size: 18px
 	line-height: 22px
 	letter-spacing: 0.1em
-	padding: 13px 60px
+	padding: 13px 80px
 	border: 2px solid #FFFFFF
 	border-radius: 25px
 	background-color: transparent
@@ -139,5 +131,16 @@ section h2
 	&:hover
 		background-color: #fff
 		color: #000
+
+
+@import "header"
+@import "top"
+@import "accomodation"
+@import "cars"
+@import "prizes"
+@import "mediasection"
+@import "faq"
+@import "nav"
+@import "bottom"
 
 @import "media"

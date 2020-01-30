@@ -4,11 +4,13 @@ $font: 'Noto Sans', sans-serif
 $font2: 'SKPorsche-Regular', sans-serif
 $font3: 'DINPro-Regular', sans-serif
 
+@media only screen and (max-width : 1700px)
+	.cars__next
+		right: 0
+
 @media only screen and (max-width : 1450px)
-	.prizes__slider_item[data-slick-index="0"] .prizes__item
-		max-width: 1100px
-		top: -260px
-		left: -70%
+	.prizes__slider_item[data-slick-index="1"] .prizes__item
+		right: -150px
 
 @media only screen and (max-width : 1150px)
 	.top
@@ -41,7 +43,7 @@ $font3: 'DINPro-Regular', sans-serif
 		width: 100%
 		margin-left: 0 !important
 	.cars__prev, .cars__next
-		display: none
+		display: none !important
 	.faq__other div
 		width: 100%
 		margin-left: 0 !important
@@ -49,12 +51,8 @@ $font3: 'DINPro-Regular', sans-serif
 		margin-top: 15px
 	.prizes__inner
 		padding-top: 150px
-	.prizes__slider_item[data-slick-index="0"] .prizes__item
-		left: -590px
 	.prizes__slider_item[data-slick-index="1"] .prizes__item
-		max-width: 400px
-		left: -110px
-		top: -130px
+		right: -200px
 	.prizes__text br
 		display: none
 	.accomodation
@@ -63,6 +61,8 @@ $font3: 'DINPro-Regular', sans-serif
 		margin-top: 50px
 	.faq
 		margin-top: 11px
+	.bottom__btn
+		margin-top: 20px
 
 
 @media screen and (-webkit-min-device-pixel-ratio:0)
@@ -371,14 +371,9 @@ $font3: 'DINPro-Regular', sans-serif
 			text-align: center
 			margin-bottom: 30px
 			img
-				&:nth-child(1)
-					width: 123px
-				&:nth-child(2)
-					width: 111px
+				max-width: 123px
 			img+img
 				margin-left: 40px
-		&__specifications
-			display: none
 		&__description
 			font-size: 14px
 			line-height: 20px
@@ -394,6 +389,8 @@ $font3: 'DINPro-Regular', sans-serif
 
 	.btn
 		width: 100%
+		padding: 10px 15px
+		font-size: 12px
 
 	.prizes
 		&__inner
@@ -414,7 +411,6 @@ $font3: 'DINPro-Regular', sans-serif
 					.prizes__logo
 						width: 138px
 						margin-left: auto
-						margin-bottom: 10px
 					.prizes__item
 						width: 146px
 						margin-left: -81px
@@ -426,7 +422,6 @@ $font3: 'DINPro-Regular', sans-serif
 					.prizes__item
 						width: 445px
 						margin-left: -262px
-						margin-bottom: -10px
 				&[data-slick-index="2"]
 					.prizes__item
 						width: 278px
@@ -454,6 +449,7 @@ $font3: 'DINPro-Regular', sans-serif
 			top: auto !important
 		&__logo
 			margin: 0 auto
+			display: block !important
 		&__description
 			max-width: none
 			text-align: center
@@ -556,6 +552,10 @@ $font3: 'DINPro-Regular', sans-serif
 			height: 25px
 			background-size: cover
 			margin-top: -13px
+		&__prev
+			left: -30px
+		&__next
+			right: -30px
 
 
 
@@ -576,10 +576,21 @@ $font3: 'DINPro-Regular', sans-serif
 		&__item
 			margin-bottom: 20px
 		&__other
-			display: none
+			max-width: none
 
 	.desktop-only
 		display: none
+
+	.bottom
+		&__cartrack
+			&--1
+				padding-top: 80px
+				.bottom__car
+					width: 458px
+			&--2
+				.bottom__car
+					width: 466px
+
 
 @media only screen and (min-width : 992px)
 	.mobile-only

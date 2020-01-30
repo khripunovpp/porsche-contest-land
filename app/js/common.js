@@ -148,7 +148,7 @@ var prizes = function () {
     setActive(prizesBtn, nextSlide);
   });
   prizesBtn.on("click", function(e) {
-    var index = $(e.target).index();
+    var index = $(this).index();
     slider.slick("slickGoTo", index);
   });
 
