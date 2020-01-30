@@ -517,6 +517,10 @@ section h2 {
   left: -40px;
 }
 
+.prizes__slider_item[data-slick-index="2"] .prizes__description {
+  display: none;
+}
+
 .prizes__title {
   font-size: 30px;
   line-height: 40px;
@@ -532,6 +536,10 @@ section h2 {
 
 .prizes__text span {
   color: #E63E21;
+}
+
+.prizes__prev, .prizes__next {
+  display: none !important;
 }
 
 .prizes__list {
@@ -1450,6 +1458,7 @@ section h2 {
     margin-left: -20px;
     margin-right: -20px;
     margin-top: 80px;
+    padding-bottom: 0;
   }
   .cars__inner {
     min-height: auto;
@@ -1522,7 +1531,7 @@ section h2 {
     text-align: center;
     padding: 0 20px;
   }
-  .cars__prev, .cars__nrxt {
+  .cars__prev, .cars__next {
     display: none !important;
   }
   .cars__footer {
@@ -1531,5 +1540,110 @@ section h2 {
   }
   .btn {
     width: 100%;
+  }
+  .prizes__inner {
+    padding-top: 80px;
+  }
+  .prizes__content, .prizes__slider {
+    display: block;
+    width: auto;
+  }
+  .prizes__content {
+    margin-bottom: 20px;
+  }
+  .prizes__slider_item {
+    min-height: auto;
+    text-align: center;
+  }
+  .prizes__slider_item-wrap {
+    margin-top: 0 !important;
+  }
+  .prizes__slider_item[data-slick-index="0"] .prizes__logo {
+    width: 138px;
+    margin-left: auto;
+    margin-bottom: 10px;
+  }
+  .prizes__slider_item[data-slick-index="0"] .prizes__item {
+    width: 146px;
+    margin-left: -81px;
+    margin-bottom: 10px;
+  }
+  .prizes__slider_item[data-slick-index="1"] .prizes__logo {
+    width: 158px;
+    margin-bottom: 10px;
+  }
+  .prizes__slider_item[data-slick-index="1"] .prizes__item {
+    width: 445px;
+    margin-left: -262px;
+    margin-bottom: -10px;
+  }
+  .prizes__slider_item[data-slick-index="2"] .prizes__item {
+    width: 278px;
+    margin-left: -139px;
+    margin-bottom: 45px;
+  }
+  .prizes__slider_item[data-slick-index="2"] .prizes__description {
+    display: block;
+    font-style: normal;
+    font-size: 18px;
+  }
+  .prizes__title {
+    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+  .prizes__text {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+  }
+  .prizes__list {
+    display: none;
+  }
+  .prizes__item {
+    position: relative;
+    max-width: none !important;
+    left: 50% !important;
+    top: auto !important;
+  }
+  .prizes__logo {
+    margin: 0 auto;
+  }
+  .prizes__description {
+    max-width: none;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .prizes__description p {
+    margin: 0;
+  }
+  .prizes__prev, .prizes__next {
+    position: absolute;
+    z-index: 3;
+    top: 75px;
+    width: 20px;
+    height: 10px;
+    background-image: url(../img/arrow-down.png);
+    background-size: cover;
+    padding: 0;
+    line-height: 1;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: block !important;
+  }
+  .prizes__prev {
+    left: 0;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .prizes__next {
+    right: 0;
+    -webkit-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
   }
 }

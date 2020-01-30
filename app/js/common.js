@@ -135,10 +135,11 @@ var carsSection = function() {
 
 var prizes = function () { 
   var slider = $(".prizes__slider-wrap").slick({
-    infinite: false,
     fade: true,
     speed: 300,
-    arrows: false
+    prevArrow: $(".prizes__prev"),
+    nextArrow: $(".prizes__next"),
+    adaptiveHeight: true
   });
 
   var prizesBtn = $(".prizes__list button");

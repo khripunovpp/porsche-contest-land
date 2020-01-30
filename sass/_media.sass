@@ -76,8 +76,8 @@ $font3: 'DINPro-Regular', sans-serif
 	
 @media only screen and (max-width : 991px)
 	.container 
-			padding: 0 20px
-			max-width: 450px
+		padding: 0 20px
+		max-width: 450px
 	.header
 		padding-top: 0
 		z-index: 9
@@ -294,15 +294,15 @@ $font3: 'DINPro-Regular', sans-serif
 				transition: .2s ease
 				display: inline-block
 				&::after
-						content: ''
-						position: absolute
-						bottom: -12px
-						left: 50%
-						margin-left: -117px
-						width: 235px
-						height: 2px
-						filter: blur(1px)
-						background-image: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)
+					content: ''
+					position: absolute
+					bottom: -12px
+					left: 50%
+					margin-left: -117px
+					width: 235px
+					height: 2px
+					filter: blur(1px)
+					background-image: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)
 			&.hide
 				&::before,
 				&::after
@@ -317,6 +317,7 @@ $font3: 'DINPro-Regular', sans-serif
 		margin-left: -20px
 		margin-right: -20px
 		margin-top: 80px
+		padding-bottom: 0
 		&__inner
 			min-height: auto
 			padding-top: 0
@@ -378,7 +379,7 @@ $font3: 'DINPro-Regular', sans-serif
 			text-align: center
 			padding: 0 20px
 		&__prev,
-		&__nrxt
+		&__next
 			display: none !important
 		&__footer
 			padding: 0 20px
@@ -388,9 +389,94 @@ $font3: 'DINPro-Regular', sans-serif
 	.btn
 		width: 100%
 
+	.prizes
+		&__inner
+			padding-top: 80px
+		&__content,
+		&__slider
+			display: block
+			width: auto
+		&__content
+			margin-bottom: 20px
+		&__slider
+			&_item
+				min-height: auto
+				text-align: center
+				&-wrap
+					margin-top: 0 !important
+				&[data-slick-index="0"]
+					.prizes__logo
+						width: 138px
+						margin-left: auto
+						margin-bottom: 10px
+					.prizes__item
+						width: 146px
+						margin-left: -81px
+						margin-bottom: 10px
+				&[data-slick-index="1"]
+					.prizes__logo
+						width: 158px
+						margin-bottom: 10px
+					.prizes__item
+						width: 445px
+						margin-left: -262px
+						margin-bottom: -10px
+				&[data-slick-index="2"]
+					.prizes__item
+						width: 278px
+						margin-left: -139px
+						margin-bottom: 45px
+					.prizes__description
+						display: block
+						font-style: normal
+						font-size: 18px
+		&__title
+			text-align: center
+			font-size: 16px
+			line-height: 24px
+			margin-bottom: 20px
+		&__text
+			font-size: 14px
+			line-height: 20px
+			text-align: center
+		&__list
+			display: none
+		&__item
+			position: relative
+			max-width: none !important
+			left: 50% !important
+			top: auto !important
+		&__logo
+			margin: 0 auto
+		&__description
+			max-width: none
+			text-align: center
+			font-size: 14px
+			line-height: 20px
+			p
+				margin: 0
 
-
-
+		&__prev,
+		&__next
+			position: absolute
+			z-index: 3
+			top: 75px
+			width: 20px
+			height: 10px
+			background-image: url(../img/arrow-down.png)
+			background-size: cover
+			padding: 0
+			line-height: 1
+			background-color: transparent
+			border: none
+			cursor: pointer
+			display: block !important
+		&__prev
+			left: 0
+			transform: rotate(90deg)
+		&__next
+			right: 0
+			transform: rotate(-90deg)
 
 
 
