@@ -2,7 +2,6 @@
 @import "icon.sass"
 @import "mixins"
 
-$color: #f4c409
 $font: 'Noto Sans', sans-serif
 $font2: 'SKPorsche-Regular', sans-serif
 $font3: 'DINPro-Regular', sans-serif
@@ -77,43 +76,6 @@ select
 .page
 	overflow: hidden
 
-.header
-	position: fixed
-	top: 0
-	left: 0
-	width: 100%
-	z-index: 2
-	padding-top: 7px
-	&__inner
-		@extend %grid
-	&__logo,
-	&__menu
-		display: table-cell
-		vertical-align: middle
-	&__logo
-		width: 150px
-		img
-			position: relative
-			left: -95px
-			max-width: none
-	&__menu
-		text-align: right
-	
-.nav
-	&__list
-	&__item
-		display: inline-block
-		margin-left: 40px
-	&__link
-		font-size: 15px
-		line-height: 18px
-		color: inherit
-		text-decoration: none
-		font-family: $font3
-		&.active,
-		&:hover
-			color: #E63E21
-
 section
 	background-repeat: no-repeat
 
@@ -123,8 +85,15 @@ section h2
 	font-weight: 400
 	font-size: 20px
 
-
-
+@import "header"
+@import "top"
+@import "accomodation"
+@import "cars"
+@import "prizes"
+@import "mediasection"
+@import "faq"
+@import "nav"
+	
 .scroll
 	display: block
 	margin: 0 auto
@@ -152,14 +121,6 @@ section h2
 		background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)	
 		filter: blur(2px)
 
-@import "top"
-@import "accomodation"
-@import "cars"
-@import "prizes"
-@import "mediasection"
-@import "faq"
-@import "nav"
-
 .btn
 	font-family: $font2
 	font-size: 20px
@@ -177,7 +138,4 @@ section h2
 		background-color: #fff
 		color: #000
 
-
-
-	//ALWAYS END
 @import "media"

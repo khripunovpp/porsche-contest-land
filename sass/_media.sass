@@ -1,4 +1,9 @@
 @import "bourbon"
+
+$font: 'Noto Sans', sans-serif
+$font2: 'SKPorsche-Regular', sans-serif
+$font3: 'DINPro-Regular', sans-serif
+
 @media only screen and (max-width : 1450px)
 	.prizes__slider_item[data-slick-index="0"] .prizes__item
 		max-width: 1100px
@@ -43,6 +48,10 @@
 		padding-top: 150px
 	.prizes__slider_item[data-slick-index="0"] .prizes__item
 		left: -590px
+	.prizes__slider_item[data-slick-index="1"] .prizes__item
+		max-width: 400px
+		left: -110px
+		top: -130px
 	.prizes__text br
 		display: none
 	.accomodation
@@ -63,3 +72,263 @@
 			background-image: none
 			-webkit-text-fill-color: #fff
 			-webkit-background-clip: initial
+
+	
+@media only screen and (max-width : 991px)
+	.container 
+			padding: 0 20px
+			max-width: 450px
+	.header
+		padding-top: 0
+		z-index: 9
+		&__inner
+			position: relative
+		&__logo img
+			left: -81px
+			max-width: 330px
+			z-index: 2
+	.nav
+		&__list
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			width: 100%;
+			padding-top: 90px;
+			opacity: 0;
+			visibility: hidden;
+			transition-property: visibility, opacity, background-color
+			transition: 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)
+			&.opened
+				opacity: 1
+				visibility: visible
+				background-color: #000;
+				.nav__item
+					opacity: 1
+		&__item
+			display: block
+			margin-left: 0
+			margin-bottom: 20px
+			text-align: center
+			opacity: 0
+		&__btn
+			padding: 15px
+			line-height: 1
+			display: block
+			position: absolute
+			z-index: 2
+			top: 15px
+			right: -15px
+			background-color: transparent
+			border: none
+			span
+				display: block
+				width: 26px
+				height: 3px
+				margin-bottom: 5px
+				position: relative
+				background: #fff
+				z-index: 1
+				transform: translateZ(0)
+				transition: opacity 0.35s, transform 0.35s
+			&.opened
+				span
+					&:first-child
+						transform: translateY(8px) rotate(45deg) translateZ(0)
+					&:nth-child(2)
+						opacity: 0
+					&:nth-child(3)
+						transform: translateY(-8px) rotate(-45deg) translateZ(0)
+
+	.top
+		background-size: 668px
+		background-position: center top 80px
+		&__inner
+			min-height: 490px
+		&__cartrack
+			&--1
+				padding-top: 80px
+				.top__car
+					width: 458px
+					right: auto
+					left: 50%
+					margin-left: -242px
+				.top__model
+					width: 111px
+					position: relative
+					right: auto
+					margin-bottom: -5px
+			&--2
+				.top__car
+					width: 466px
+					left: 50%
+					margin-left: -213px
+				.top__model
+					width: 127px
+					left: auto
+					margin-top: -30px
+		&__model
+			position: relative
+			top: auto !important
+			display: block
+			margin: 0 auto
+		&__car
+			display: block
+		&__title
+			font-size: 12px
+			line-height: 21px
+			margin-top: -55px
+			margin-bottom: 3px
+			strong
+				font-size: 16px
+		&__date
+			position: relative
+			bottom: auto
+			right: auto
+			text-align: center
+			margin-top: 30px
+
+	.date
+		font-size: 14px
+		line-height: 17px
+		&__sep
+			margin: 0 20px
+			width: 7px
+			height: 10px
+			background-image: url(../img/date-arrow-mobile.png)
+			
+	.scroll
+		margin-top: 20px
+		width: 20px
+		height: 10px
+		background-size: cover
+		&::after
+			width: 80px
+			margin-left: -40px
+			top: 20px
+
+	.sections
+		display: none !important
+		bottom: 0
+		padding-bottom: 35px
+		padding-top: 30px
+		transition-property: background-color
+		transition: 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)
+		// background-image: linear-gradient(to top, #000 50%, transparent 100%)
+		& .container
+			padding: 0 10px
+		&::after
+			content: ''
+			position: absolute
+			bottom: 0
+			width: 100%
+			height: 50px
+			transform: translateY(30px)
+			transition: transform .2s ease
+			background-image: linear-gradient(to top, #EB1515 0%, rgba(235, 21, 21, 0) 100%)
+		&.expanded
+			top: 0
+			background-image: none
+			background-color: #000
+			&::after
+				transform: translateY(0)
+			.sections__list
+				visibility: visible
+				opacity: 1
+				transform: translateY(0)
+		&__inner
+			position: relative
+		&__list
+			background-color: #000
+			transition-property: visibility, opacity, transform
+			transition: 0.35s cubic-bezier(0.215, 0.61, 0.355, 1)
+			display: block
+			padding-top: 50px
+			opacity: 0
+			visibility: hidden
+			transform: translateY(0)
+		&__item
+			display: block
+			font-size: 12px
+			line-height: 24px
+			display: table
+			margin: 0 auto 50px
+			display: none
+			&::before
+				display: none
+			&::after
+				top: auto
+				bottom: -10px
+				height: 2px
+		&__btn
+			display: block
+			padding: 0
+			line-height: 1
+			background-color: transparent
+			color: #fff
+			font-family: $font2
+			border: none
+			display: table
+			margin: 0 auto
+			font-size: 12px
+			letter-spacing: 0.1em
+			&::after,
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				margin-top: -4px
+				width: 12px
+				height: 7px
+				background-image: url(../img/arrow-expand.png)
+				transform: scale(1,-1)
+				transition-property: opacity, transform
+				transition: .2s ease
+			&::after
+				right: 0
+			&::before
+				left: 0
+			span
+				position: relative
+				transition-property: opacity, transform
+				transition: .2s ease
+				display: inline-block
+				&::after
+						content: ''
+						position: absolute
+						bottom: -12px
+						left: 50%
+						margin-left: -117px
+						width: 235px
+						height: 2px
+						filter: blur(1px)
+						background-image: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)
+			&.hide
+				&::before,
+				&::after
+					transform: scale(1,-1) translateY(5px)
+					opacity: 0
+				span
+					transform: translateY(5px)
+					opacity: 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

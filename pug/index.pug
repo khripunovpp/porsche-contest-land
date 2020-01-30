@@ -22,6 +22,10 @@ html
 							img(src="img/logo.png", alt="")
 						.header__menu
 							nav.nav
+								button.nav__btn
+									span
+									span
+									span
 								ul.nav__list
 									li.nav__item
 										a.nav__link(href="https://adcombo.com/offers/") Offer list
@@ -44,13 +48,13 @@ html
 				.container
 					.top__inner
 						.top__cartrack.top__cartrack--1
-							img.top__car(src="img/car-1.png", alt="")
 							img.top__model(src="img/boxster_logo.svg", alt="")
+							img.top__car(src="img/car-1.png", alt="")
 						h1.top__title new challenge
 							strong posh’n’porsche
 						.top__cartrack.top__cartrack--2
-							img.top__model(src="img/carrera_logo.svg", alt="")
 							img.top__car(src="img/car-2.png", alt="")
+							img.top__model(src="img/carrera_logo.svg", alt="")
 						.top__date.date
 							span.date__from Start 01.02.20
 							span.date__sep
@@ -199,9 +203,11 @@ html
 									p Each of the prize draw participant receives chips with its nickname registered in the AdCombo network. #[strong A quantity of a participant`s chips] is #[strong equal] to the number of #[strong gained porsche points]. 
 									p The chips of all the prize draw participants are put into a lottery drum. The drawing for the additional prizes is conducted first. Then the drawing of the grand prizes starts. The more chips are gained the higher the chances to win! 
 
-			aside.sections
+			aside.sections.show.expanded
 				.container
 					.sections__inner
+						button.sections__btn.hide
+							span Additional prizes
 						.sections__list
 							button.sections__item(data-href="top") Top
 							button.sections__item(data-href="cars") Main prizes

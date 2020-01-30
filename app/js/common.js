@@ -30,7 +30,7 @@ var scrollDetection = function() {
   if (scrollTop + viewportHeight - shift >= menuTriggerOfset) {
     sectionsNav.addClass("show");
   } else {
-    sectionsNav.removeClass("show");
+    sectionsNav.removeClass("show expanded");
   }
 };
 
@@ -169,4 +169,11 @@ $(function() {
   videoPlayer();
   carsSection();
   prizes();
+
+  var navBtn = $(".nav__btn");
+
+  navBtn.on("click", function() {
+    navBtn.toggleClass("opened");
+    $(".nav__list").toggleClass("opened");
+  });
 });
