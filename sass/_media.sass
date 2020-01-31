@@ -209,6 +209,11 @@ $font3: 'DINPro-Regular', sans-serif
 			width: 80px
 			margin-left: -40px
 			top: 20px
+		&--totop
+			margin-top: 0
+			margin-bottom: 40px
+			&::after
+				top: -20px
 
 	.sections
 		display: none !important
@@ -346,13 +351,13 @@ $font3: 'DINPro-Regular', sans-serif
 			& [data-slick-index="0"]
 				.cars__car
 					left: 50%
-					margin-left: -160px
+					margin-left: -148px
 					width: 320px
 			& [data-slick-index="1"]
 				.cars__car
 					left: 50%
-					width: 297px
-					margin-left: -160px
+					width: 312px
+					margin-left: -171px
 		&__bg
 			background-size: cover
 			&--1
@@ -421,7 +426,7 @@ $font3: 'DINPro-Regular', sans-serif
 						margin-bottom: 10px
 					.prizes__item
 						width: 445px
-						margin-left: -262px
+						margin-left: -217px
 				&[data-slick-index="2"]
 					.prizes__item
 						width: 278px
@@ -535,7 +540,7 @@ $font3: 'DINPro-Regular', sans-serif
 				width: 710px
 				height: 350px
 				background-size: cover
-				background-image: url(../img/bg-5.png)
+				background-image: url(../img/bg-5.jpg)
 		&__videos,
 		&__item
 			width: 225px
@@ -582,15 +587,30 @@ $font3: 'DINPro-Regular', sans-serif
 		display: none
 
 	.bottom
+		background-size: 668px
+		background-position: center top 5px
+		background-image: url(../img/bg-1.jpg)
+		margin-bottom: -20px
+		&::before,
+		&::after
+			display: none
 		&__cartrack
 			&--1
-				padding-top: 80px
 				.bottom__car
 					width: 458px
+					margin-left: -238px
 			&--2
 				.bottom__car
 					width: 466px
-
+					margin-left: -213px
+		&__car
+			left: 50% !important
+		&__title
+			font-size: 16px
+			line-height: 24px
+			margin: -58px 0 10px
+		&__btn
+			margin-bottom: 15px
 
 @media only screen and (min-width : 992px)
 	.mobile-only

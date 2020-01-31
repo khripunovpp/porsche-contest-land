@@ -11,7 +11,8 @@ $.fn.isOnScreen = function(shift) {
   return bounds.top <= viewport.bottom && bounds.bottom >= viewport.top;
 };
 
-var menuTriggerOfset = $(".scroll").offset().top;
+var menuTriggerStart = $(".scroll").offset().top;
+var menuTriggerStop = $("#bottom").offset().top;
 var sectionsNav = $(".sections");
 var shift = 150;
 
@@ -27,7 +28,10 @@ var scrollDetection = function() {
   var scrollTop = $(document).scrollTop(),
     viewportHeight = $(window).innerHeight();
 
-  if (scrollTop + viewportHeight - shift >= menuTriggerOfset) {
+  if (
+    scrollTop + viewportHeight - shift >= menuTriggerStart &&
+    scrollTop <= menuTriggerStop - viewportHeight
+  ) {
     sectionsNav.addClass("show");
   } else {
     sectionsNav.removeClass("show expanded");
@@ -41,11 +45,14 @@ var hightlight = function(id) {
   $('.sections__item[data-href="' + id + '"]').addClass("active");
 };
 
+var faqItems = $(".faq__item");
 var faq = function(e) {
   e.preventDefault();
   var item = $(e.target).closest(".faq__item");
   item.find(".faq__item-text").slideToggle();
   item.toggleClass("active");
+  faqItems.not(item).find(".faq__item-text").slideUp();
+  faqItems.not(item).removeClass('active');
 };
 
 var videoPlayer = function() {
@@ -114,12 +121,14 @@ var carsSection = function() {
     fade: true,
     speed: 300,
     prevArrow: $(".cars__prev"),
-    nextArrow: $(".cars__next")
+    nextArrow: $(".cars__next"),
+    autoplay: true,
+    autoplaySpeed: 3500
   });
 
   var modelsImg = $(".cars__models img"),
     bg = $(".cars__bg"),
-    info = $('.cars__info');
+    info = $(".cars__info");
 
   slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
     setActive(modelsImg, nextSlide);
@@ -133,13 +142,15 @@ var carsSection = function() {
   });
 };
 
-var prizes = function () { 
+var prizes = function() {
   var slider = $(".prizes__slider-wrap").slick({
     fade: true,
     speed: 300,
     prevArrow: $(".prizes__prev"),
     nextArrow: $(".prizes__next"),
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    autoplay: true,
+    autoplaySpeed: 3500
   });
 
   var prizesBtn = $(".prizes__list button");
@@ -151,8 +162,7 @@ var prizes = function () {
     var index = $(this).index();
     slider.slick("slickGoTo", index);
   });
-
- }
+};
 
 $(function() {
   scrollDetection();
@@ -162,7 +172,7 @@ $(function() {
     e.preventDefault();
     var id = $(this).attr("data-href");
     var section = $("#" + id).offset().top;
-    var shift = $('.header').height();
+    var shift = $(".header").height();
     if ($(window).innerWidth() > 992) shift = 0;
     $("html, body").animate({ scrollTop: section - shift }, 666);
   });

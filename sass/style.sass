@@ -74,7 +74,7 @@ select
 	@extend %container
 
 .page
-	overflow-x: hidden
+	overflow: hidden
 
 section
 	background-repeat: no-repeat
@@ -112,6 +112,13 @@ section h2
 		height: 4px
 		background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%)	
 		filter: blur(2px)
+	&--totop
+		margin-bottom: 80px
+		transform: scale(1,-1)
+		&::after
+			
+			top: -40px
+
 
 .btn
 	font-family: $font2

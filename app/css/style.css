@@ -98,7 +98,7 @@ select {
 }
 
 .page {
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 section {
@@ -142,6 +142,17 @@ section h2 {
   background: radial-gradient(50% 50% at 50% 50%, #E63E21 66.67%, rgba(230, 62, 33, 0) 100%);
   -webkit-filter: blur(2px);
   filter: blur(2px);
+}
+
+.scroll--totop {
+  margin-bottom: 80px;
+  -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
+  transform: scale(1, -1);
+}
+
+.scroll--totop::after {
+  top: -40px;
 }
 
 .btn {
@@ -689,7 +700,7 @@ section h2 {
 }
 
 .media {
-  background-image: url(../img/bg-5.png);
+  background-image: url(../img/bg-5.jpg);
   background-position: 50% 120px;
   margin-top: 50px;
 }
@@ -1118,6 +1129,7 @@ section h2 {
 .bottom__car {
   display: block;
   position: relative;
+  max-width: none;
 }
 
 .bottom__cartrack {
@@ -1401,6 +1413,13 @@ section h2 {
     margin-left: -40px;
     top: 20px;
   }
+  .scroll--totop {
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+  .scroll--totop::after {
+    top: -20px;
+  }
   .sections {
     display: none !important;
     bottom: 0;
@@ -1598,13 +1617,13 @@ section h2 {
   }
   .cars__slider [data-slick-index="0"] .cars__car {
     left: 50%;
-    margin-left: -160px;
+    margin-left: -148px;
     width: 320px;
   }
   .cars__slider [data-slick-index="1"] .cars__car {
     left: 50%;
-    width: 297px;
-    margin-left: -160px;
+    width: 312px;
+    margin-left: -171px;
   }
   .cars__bg {
     background-size: cover;
@@ -1683,7 +1702,7 @@ section h2 {
   }
   .prizes__slider_item[data-slick-index="1"] .prizes__item {
     width: 445px;
-    margin-left: -262px;
+    margin-left: -217px;
   }
   .prizes__slider_item[data-slick-index="2"] .prizes__item {
     width: 278px;
@@ -1821,7 +1840,7 @@ section h2 {
     width: 710px;
     height: 350px;
     background-size: cover;
-    background-image: url(../img/bg-5.png);
+    background-image: url(../img/bg-5.jpg);
   }
   .media__videos, .media__item {
     width: 225px;
@@ -1873,14 +1892,33 @@ section h2 {
   .desktop-only {
     display: none;
   }
-  .bottom__cartrack--1 {
-    padding-top: 80px;
+  .bottom {
+    background-size: 668px;
+    background-position: center top 5px;
+    background-image: url(../img/bg-1.jpg);
+    margin-bottom: -20px;
+  }
+  .bottom::before, .bottom::after {
+    display: none;
   }
   .bottom__cartrack--1 .bottom__car {
     width: 458px;
+    margin-left: -238px;
   }
   .bottom__cartrack--2 .bottom__car {
     width: 466px;
+    margin-left: -213px;
+  }
+  .bottom__car {
+    left: 50% !important;
+  }
+  .bottom__title {
+    font-size: 16px;
+    line-height: 24px;
+    margin: -58px 0 10px;
+  }
+  .bottom__btn {
+    margin-bottom: 15px;
   }
 }
 
