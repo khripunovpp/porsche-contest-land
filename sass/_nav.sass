@@ -5,11 +5,14 @@
 .sections
 	position: fixed
 	z-index: 8
-	bottom: 60px
+	bottom: 0
+	padding-bottom: 60px
+	padding-top: 40px
 	left: 0
 	width: 100%
 	transform: translateY(200px)
 	transition: all .6s ease-out
+	background-image: linear-gradient(to top, #000 60%, rgba(#000,.5) 80%, transparent)
 	&.show
 		transform: translateY(0)
 	&__btn

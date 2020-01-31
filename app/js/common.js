@@ -12,7 +12,6 @@ $.fn.isOnScreen = function(shift) {
 };
 
 var menuTriggerStart = $(".scroll").offset().top;
-var menuTriggerStop = $("#bottom").offset().top;
 var sectionsNav = $(".sections");
 var shift = 150;
 
@@ -29,8 +28,7 @@ var scrollDetection = function() {
     viewportHeight = $(window).innerHeight();
 
   if (
-    scrollTop + viewportHeight - shift >= menuTriggerStart &&
-    scrollTop <= menuTriggerStop - viewportHeight
+    scrollTop + viewportHeight - shift >= menuTriggerStart
   ) {
     sectionsNav.addClass("show");
   } else {

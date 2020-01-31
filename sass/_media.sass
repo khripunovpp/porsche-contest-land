@@ -214,11 +214,6 @@ $font3: 'DINPro-Regular', sans-serif
 			width: 80px
 			margin-left: -40px
 			top: 20px
-		&--totop
-			margin-top: 0
-			margin-bottom: 40px
-			&::after
-				top: -20px
 
 	.sections
 		display: none !important
@@ -591,31 +586,8 @@ $font3: 'DINPro-Regular', sans-serif
 	.desktop-only
 		display: none
 
-	.bottom
-		background-size: 668px
-		background-position: center top 5px
-		background-image: url(../img/bg-1.jpg)
-		margin-bottom: -20px
-		&::before,
-		&::after
-			display: none
-		&__cartrack
-			&--1
-				.bottom__car
-					width: 458px
-					margin-left: -238px
-			&--2
-				.bottom__car
-					width: 466px
-					margin-left: -213px
-		&__car
-			left: 50% !important
-		&__title
-			font-size: 16px
-			line-height: 24px
-			margin: -58px 0 10px
-		&__btn
-			margin-bottom: 15px
+	.footer
+		padding-bottom: 60px
 
 @media only screen and (min-width : 992px)
 	.mobile-only
