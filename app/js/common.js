@@ -164,7 +164,57 @@ var prizes = function() {
   });
 };
 
+var langSwitcher = function() {
+  var language = window.navigator ? (window.navigator.language ||
+      window.navigator.systemLanguage ||
+      window.navigator.userLanguage) : "en";
+  language = language.substr(0, 2).toLowerCase();
+
+  if (language === 'ru') switchLang('ru')
+
+  document.addEventListener('click', function(e) {
+      var target = e.target
+      if (!target.getAttribute('data-lang-switcher')) return
+
+      var langCurrent = document.body.getAttribute('data-lang-status')
+      var langToSwitch = target.getAttribute('data-lang-switcher')
+
+      if (langCurrent !== langToSwitch) switchLang(langToSwitch)
+  })
+
+  function switchLang(lang) {
+      var langCurrent = document.body.getAttribute('data-lang-status')
+
+      $('[data-lang-status]').attr('data-lang-status', lang)
+
+      $('[data-lang-switcher=' + lang + ']').text(langCurrent).attr('data-lang-switcher', langCurrent)
+
+      $('.lang__current').text(lang)
+
+      var switchers = [].slice.call(document.querySelectorAll('[data-lang-switcher]'))
+
+      switchers.forEach(function(item) {
+          item.classList.remove('active')
+      })
+
+      var content = [].slice.call(document.querySelectorAll('[data-lang-id]'))
+
+      content.forEach(function(item) {
+          var id = +item.getAttribute('data-lang-id')
+          item.innerHTML = data[lang][id]
+      })
+
+      document.documentElement.lang = lang
+  }
+
+}
+
 $(function() {
+  $('.lang').on('click', function(event) {
+    event.preventDefault();
+    $(this).toggleClass('opened')
+});
+  langSwitcher()
   scrollDetection();
   $(document).on("scroll", scrollDetection);
 
@@ -189,4 +239,5 @@ $(function() {
     navBtn.toggleClass("opened");
     $(".nav__list").toggleClass("opened");
   });
+
 });

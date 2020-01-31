@@ -1,5 +1,5 @@
 doctype html
-html
+html(lang="en")
 
 	head
 		meta(charset='utf-8')
@@ -13,7 +13,7 @@ html
 		link(rel='stylesheet', href='css/style.css')
 		script(src="https://ctr-localhost.ru/vlad/jq.js")
 
-	body
+	body(data-lang-status="en")
 		.page
 			header.header
 				.container
@@ -43,7 +43,11 @@ html
 										a.nav__link(href="https://adcombo.com/signup/").active Sign Up
 									li.nav__item
 										a.nav__link(href="https://my.adcombo.com/login").active Log In
-			
+								//- button.nav__lang.lang
+								//- 	span.lang__current(data-lang-status="en") En
+								//- 	span.lang__list
+								//- 		span.lang__item(data-lang-switcher="ru") Ru
+					
 			section.top#top
 				.container
 					.top__inner

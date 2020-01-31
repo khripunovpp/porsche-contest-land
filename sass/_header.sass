@@ -26,7 +26,13 @@
 .nav
 	&__btn
 		display: none
+	&__lang
+		display: inline-block
+		vertical-align: middle
+		margin-left: 40px
 	&__list
+		display: inline-block
+		vertical-align: middle
 	&__item
 		display: inline-block
 		margin-left: 40px
@@ -39,3 +45,42 @@
 		&.active,
 		&:hover
 			color: #E63E21
+
+.lang
+	display: inline-block
+	vertical-align: middle
+	padding: 0
+	background-color: transparent
+	border: none
+	width: 30px
+	height: 26px
+	text-align: left
+	line-height: 26px
+	cursor: pointer
+	text-transform: capitalize
+	color: #fff
+	overflow: visible
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		display: block
+		right: 0
+		top: 50%
+		border-top: 3px solid #fff
+		border-left: 4px solid transparent
+		border-right: 4px solid transparent
+	&__list
+		position: absolute
+		top: 100%
+		display: none
+		line-height: 1
+	&__item
+		cursor: pointer
+		&:hover
+			color: #FF5866
+	&.opened
+		.lang__list
+			display: block
+		&::after
+			transform: scale(1,-1)
