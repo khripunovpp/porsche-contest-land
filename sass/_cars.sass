@@ -39,12 +39,24 @@
         & [data-slick-index="0"]
             .cars__car
                 left: -70px
+                transform: translateX(-35px)
         & [data-slick-index="1"]
             .cars__car
                 left: -185px
+                transform: translateX(35px)
+    
+    &__item
+        &-wrap
+            &.active
+                .cars__car
+                    opacity: 1
+                    transform: matrix(1, 0, 0, 1, 0, 0)
     &__car
         position: relative
         max-width: none
+        opacity: 0
+        transition-property: opacity, transform
+        transition: 1.5s ease-in-out
     &__prev,
     &__next
         position: absolute

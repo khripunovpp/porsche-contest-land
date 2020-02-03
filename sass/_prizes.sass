@@ -29,6 +29,9 @@
         .prizes__item
           top: -180px
           right: 0
+      &.slick-active
+        .prizes__item
+          transform: scale(1.2)
   &__title
     font-size: 30px
     line-height: 40px
@@ -122,6 +125,7 @@
   &__item
     max-width: none
     position: absolute
+    transition: transform 10s ease-out
   &__description
     position: relative
     z-index: 1

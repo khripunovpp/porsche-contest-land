@@ -27,9 +27,7 @@ var scrollDetection = function() {
   var scrollTop = $(document).scrollTop(),
     viewportHeight = $(window).innerHeight();
 
-  if (
-    scrollTop + viewportHeight - shift >= menuTriggerStart
-  ) {
+  if (scrollTop + viewportHeight - shift >= menuTriggerStart) {
     sectionsNav.addClass("show");
   } else {
     sectionsNav.removeClass("show expanded");
@@ -49,8 +47,11 @@ var faq = function(e) {
   var item = $(e.target).closest(".faq__item");
   item.find(".faq__item-text").slideToggle();
   item.toggleClass("active");
-  faqItems.not(item).find(".faq__item-text").slideUp();
-  faqItems.not(item).removeClass('active');
+  faqItems
+    .not(item)
+    .find(".faq__item-text")
+    .slideUp();
+  faqItems.not(item).removeClass("active");
 };
 
 var videoPlayer = function() {
@@ -126,12 +127,23 @@ var carsSection = function() {
 
   var modelsImg = $(".cars__models img"),
     bg = $(".cars__bg"),
-    info = $(".cars__info");
+    info = $(".cars__info"),
+    carWrap = $(".cars__item-wrap");
 
   slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
     setActive(modelsImg, nextSlide);
     setActive(bg, nextSlide);
     setActive(info, nextSlide);
+    $(".cars__item")
+      .eq(currentSlide)
+      .find(carWrap)
+      .removeClass("active");
+  });
+  slider.on("afterChange", function(event, slick, currentSlide) {
+    $(".cars__item")
+      .eq(currentSlide)
+      .find(carWrap)
+      .addClass("active");
   });
 
   modelsImg.on("click", function(e) {
@@ -163,58 +175,65 @@ var prizes = function() {
 };
 
 var langSwitcher = function() {
-  var language = window.navigator ? (window.navigator.language ||
+  var language = window.navigator
+    ? window.navigator.language ||
       window.navigator.systemLanguage ||
-      window.navigator.userLanguage) : "en";
+      window.navigator.userLanguage
+    : "en";
   language = language.substr(0, 2).toLowerCase();
 
-  if (language === 'ru') switchLang('ru')
+  if (language === "ru") switchLang("ru");
 
-  document.addEventListener('click', function(e) {
-      var target = e.target
-      if (!target.getAttribute('data-lang-switcher')) return
+  document.addEventListener("click", function(e) {
+    var target = e.target;
+    if (!target.getAttribute("data-lang-switcher")) return;
 
-      var langCurrent = document.body.getAttribute('data-lang-status')
-      var langToSwitch = target.getAttribute('data-lang-switcher')
+    var langCurrent = document.body.getAttribute("data-lang-status");
+    var langToSwitch = target.getAttribute("data-lang-switcher");
 
-      if (langCurrent !== langToSwitch) switchLang(langToSwitch)
-  })
+    if (langCurrent !== langToSwitch) switchLang(langToSwitch);
+  });
 
   function switchLang(lang) {
-      var langCurrent = document.body.getAttribute('data-lang-status')
+    var langCurrent = document.body.getAttribute("data-lang-status");
 
-      $('[data-lang-status]').attr('data-lang-status', lang)
+    $("[data-lang-status]").attr("data-lang-status", lang);
 
-      $('[data-lang-switcher=' + lang + ']').text(langCurrent).attr('data-lang-switcher', langCurrent)
+    $("[data-lang-switcher=" + lang + "]")
+      .text(langCurrent)
+      .attr("data-lang-switcher", langCurrent);
 
-      $('.lang__current').text(lang)
+    $(".lang__current").text(lang);
 
-      var switchers = [].slice.call(document.querySelectorAll('[data-lang-switcher]'))
+    var switchers = [].slice.call(
+      document.querySelectorAll("[data-lang-switcher]")
+    );
 
-      switchers.forEach(function(item) {
-          item.classList.remove('active')
-      })
+    switchers.forEach(function(item) {
+      item.classList.remove("active");
+    });
 
-      var content = [].slice.call(document.querySelectorAll('[data-lang-id]'))
+    var content = [].slice.call(document.querySelectorAll("[data-lang-id]"));
 
-      content.forEach(function(item) {
-          var id = +item.getAttribute('data-lang-id')
-          item.innerHTML = data[lang][id]
-      })
+    content.forEach(function(item) {
+      var id = +item.getAttribute("data-lang-id");
+      item.innerHTML = data[lang][id];
+    });
 
-      document.documentElement.lang = lang
+    document.documentElement.lang = lang;
   }
-
-}
+};
 
 $(function() {
-  $('.lang').on('click', function(event) {
+  $(".lang").on("click", function(event) {
     event.preventDefault();
-    $(this).toggleClass('opened')
-});
-  langSwitcher()
+    $(this).toggleClass("opened");
+  });
+  // langSwitcher();
   scrollDetection();
   $(document).on("scroll", scrollDetection);
+
+  $(".top").addClass("start");
 
   $(".sections__item, .scroll").on("click", function(e) {
     e.preventDefault();
@@ -237,5 +256,4 @@ $(function() {
     navBtn.toggleClass("opened");
     $(".nav__list").toggleClass("opened");
   });
-
 });

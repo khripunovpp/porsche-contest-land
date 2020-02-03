@@ -11,9 +11,20 @@ html(lang="en")
 		link(rel='stylesheet', href='css/fonts.css')
 		link(rel='stylesheet', href='css/slick.css')
 		link(rel='stylesheet', href='css/style.css')
-		script(src="https://ctr-localhost.ru/vlad/jq.js")
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
+		script.
+			(function (w, d, s, l, i) {
+			w[l] = w[l] || []; w[l].push({
+			'gtm.start':
+			new Date().getTime(), event: 'gtm.js'
+			}); var f = d.getElementsByTagName(s)[0],
+			j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+			'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+			})(window, document, 'script', 'dataLayer', 'GTM-WM6ZR6Q');
 
 	body(data-lang-status="en")
+		noscript
+			iframe(src='https://www.googletagmanager.com/ns.html?id=GTM-WM6ZR6Q' height='0' width='0' style='display:none;visibility:hidden')
 		.page
 			header.header
 				.container
@@ -75,19 +86,19 @@ html(lang="en")
 						.cars__models
 							img(src="img/carrera_logo.svg", alt="").active
 							img(src="img/boxster_logo.svg", alt="")
-						p.cars__description Drive traffic to #[strong all offers] for #[strong all GEOs] and get #[strong 1 Porsche Point per every $ 10 000] available for payout within your account. The more Porsche points you get, the higher your chances of winning!
+						p.cars__description Drive traffic to #[strong all offers] for #[strong all GEOs] and get #[strong 1 Porsche Point per every $ 10 000] available for payout within your account. The more #[strong Porsche Points] you get, the higher your chances of winning are!
 						.cars__slider
 							div.cars__bg.cars__bg--1.active
 							div.cars__bg.cars__bg--2
 							.cars__slider-wrap
 								.cars__item
-									.cars__item-wrap
+									.cars__item-wrap.active
 										img(src="img/cars-car-1.png", alt="").cars__car
 								.cars__item
 									.cars__item-wrap
 										img(src="img/cars-car-2.png", alt="").cars__car
 						.cars__footer
-							a(href="https://adcombo.com/signup/").cars__btn.btn START THE RACE
+							a(href="https://my.adcombo.com/dashboard").cars__btn.btn START THE RACE
 
 			section.prizes#prizes
 				.container
@@ -108,7 +119,7 @@ html(lang="en")
 							.prizes__slider-wrap
 								.prizes__slider_item
 									.prizes__slider_item-wrap
-										img(src="img/prize-2.jpg", alt="").prizes__item
+										img(src="img/prize-2.png", alt="").prizes__item
 										img(src="img/prize-2-logo.png", alt="").prizes__logo
 								.prizes__slider_item
 									.prizes__slider_item-wrap
@@ -132,9 +143,9 @@ html(lang="en")
 								button.media__prev
 								.media__list
 									.media__item
-										video(data-url="/152/videos/1580252400/porsche-contest-2020", poster="img/poster-1.jpg").video
-									.media__item
 										video(data-url="/152/videos/1580252400/porsche-contest-2020-2", poster="img/poster-2.jpg").video
+									.media__item
+										video(data-url="/152/videos/1580252400/porsche-contest-2020", poster="img/poster-1.jpg").video
 								button.media__next
 						h2.media__title.desktop-only How we partied last time
 
@@ -156,21 +167,21 @@ html(lang="en")
 								li.faq__item
 									p.faq__item-caption How does it work? 
 									.faq__item-text
-										p A new section in the user interface will appear. You’ll be able to check the current quantity of #[strong porsche points] you gained and your actual position in the Top-ranking table #[i (Top-10, Top-20 , Top-30, Top-40, Top-50 or under Top-50)]. 
-										p The more #[strong porsche points] you get, the higher your position is.
+										p A new section in the user interface will appear. You’ll be able to check the current quantity of #[strong Porsche Points] you gained and your actual position in the Top-ranking table #[i (Top-10, Top-20 , Top-30, Top-40, Top-50 or under Top-50)]. 
+										p The more #[strong Porsche Points] you get, the higher your position is.
 								li.faq__item
-									p.faq__item-caption What are the “porsche points” and how can I get them? 
+									p.faq__item-caption What are the “Porsche Points” and how can I get them? 
 									.faq__item-text
-										p Porsche points are the contest currency. You get #[strong 1 Porsche Point] per each #[strong 10 000 USD] earned and available for withdrawal in your affiliate account. There are special rates for the conversion of funds into Porsche Points for some types of offers: #[strong (funds earned) x (offer rate)].
+										p #[strong Porsche Points] are the contest currency. You get #[strong 1 Porsche Point] per each #[strong 10 000 USD] earned and available for withdrawal in your affiliate account. There are special rates for the conversion of funds into Porsche Points for some types of offers: #[strong (funds earned) x (offer rate)].
 										p #[strong Example]: an affiliate has run traffic in the period from #[strong Feb 1, 2020, to Sep 1, 2020], inclusive and earned #[strong 350 000 USD] available for withdrawal. Hence, he got #[strong 35 Porsche Points].
 										p #[strong ATTENTION]: An affiliate cannot get any #[strong Porsche Points] for unapproved or rejected leads as well as for the held funds.
 								
 							ul.faq__list
-								li.faq__item
-									p.faq__item-caption What changes will the AdCombo Loyalty Program face?
-									.faq__item-text
-										p The sum gained with the Loyalty Program will be on hold and not be available for withdrawal, but it will be displayed on the affiliate's dashboard and in the chart. 
-										p The maximum percentage of the affiliate's income from the AdCombo Loyalty Program cannot be higher than 4%. 
+								//- li.faq__item
+								//- 	p.faq__item-caption What changes will the AdCombo Loyalty Program face?
+								//- 	.faq__item-text
+								//- 		p The sum gained with the Loyalty Program will be on hold and not be available for withdrawal, but it will be displayed on the affiliate's dashboard and in the chart. 
+								//- 		p The maximum percentage of the affiliate's income from the AdCombo Loyalty Program cannot be higher than 4%. 
 								li.faq__item
 									p.faq__item-caption Who can participate in the prize drawing?
 									.faq__item-text
@@ -196,7 +207,7 @@ html(lang="en")
 			footer.footer#footer
 				.container
 					.footer__inner
-						a(href="https://adcombo.com/signup/").footer__btn.btn JOIN THE RACE
+						a(href="https://my.adcombo.com/dashboard").footer__btn.btn JOIN THE RACE
 							
 			aside.sections.show.expanded
 				.container
@@ -209,6 +220,34 @@ html(lang="en")
 							button.sections__item(data-href="prizes") Additional prizes
 							button.sections__item(data-href="media") Media
 							button.sections__item(data-href="rules") Rules
+		script(type='text/javascript').
+			adroll_adv_id = "UXGB2QLMHBFBJLLKI3SCDJ"; adroll_pix_id = "EHABHXTFZ5ES7E3W4RZWGV";
+			(function () {
+			var _onload = function () {
+			if (document.readyState && !/loaded|complete/.test(document.readyState)) { setTimeout(_onload, 10); return }
+			if (!window.__adroll_loaded) { __adroll_loaded = true; setTimeout(_onload, 50); return }
+			var scr = document.createElement("script");
+			var host = (("https:" == document.location.protocol) ? "https://s.adroll.com" : "http://a.adroll.com");
+			scr.setAttribute('async', 'true');
+			scr.type = "text/javascript";
+			scr.src = host + "/j/roundtrip.js";
+			((document.getElementsByTagName('head') || [null])[0] ||
+			document.getElementsByTagName('script')[0].parentNode).appendChild(scr);
+			};
+			if (window.addEventListener) { window.addEventListener('load', _onload, false); }
+			else { window.attachEvent('onload', _onload) }
+			}());
+		script(type='text/javascript').
+			!function () { var t = document.createElement("script"); t.type = "text/javascript", t.async = !0, t.src = "https://vk.com/js/api/openapi.js?160", t.onload = function () { VK.Retargeting.Init("VK-RTRG-332695-9fhUq"), VK.Retargeting.Hit() }, document.head.appendChild(t) }();
+		noscript
+			img(src='https://vk.com/rtrg?p=VK-RTRG-332695-9fhUq' style='position:fixed; left:-999px;' alt='')
+		// Facebook Pixel Code
+		script.
+			!function (f, b, e, v, n, t, s) { if (f.fbq) return; n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) }; if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = []; t = b.createElement(e); t.async = !0; t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s) }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '546442275871577'); fbq('track', 'PageView');
+		noscript
+			img(height='1' width='1' style='display:none' src='https://www.facebook.com/tr?id=546442275871577&ev=PageView&noscript=1')
+		// End Facebook Pixel Code
+
 
 		script(src="js/slick.min.js")
 		script(src="js/common.js")

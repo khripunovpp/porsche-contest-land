@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "DINPro-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/DINPro.eot?#iefix") format("embedded-opentype"), url("../fonts/DINPro.woff") format("woff"), url("../fonts/DINPro.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SKPorsche-Regular";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/SKPorsche.eot?#iefix") format("embedded-opentype"), url("../fonts/SKPorsche.woff") format("woff"), url("../fonts/SKPorsche.ttf") format("truetype");
+}
