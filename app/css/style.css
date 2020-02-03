@@ -197,6 +197,8 @@ section h2 {
 
 .header__menu {
   text-align: right;
+  position: relative;
+  z-index: 2;
 }
 
 .nav__btn {
@@ -264,6 +266,7 @@ section h2 {
   top: 100%;
   display: none;
   line-height: 1;
+  padding: 10px 0;
 }
 
 .lang__item {
@@ -287,42 +290,6 @@ section h2 {
 .top {
   background-image: url(../img/bg-1.jpg);
   background-position: 50% 0;
-}
-
-.top.start .top__cartrack--1 .top__car {
-  -webkit-transition: -webkit-transform 3.5s ease-in-out;
-  transition: -webkit-transform 3.5s ease-in-out;
-  -o-transition: transform 3.5s ease-in-out;
-  transition: transform 3.5s ease-in-out;
-  transition: transform 3.5s ease-in-out, -webkit-transform 3.5s ease-in-out;
-  -webkit-transform: matrix(1, 0, 0, 1, -635, 0);
-  -ms-transform: matrix(1, 0, 0, 1, -635, 0);
-  transform: matrix(1, 0, 0, 1, -635, 0);
-}
-
-.top.start .top__cartrack--1 .top__model {
-  -webkit-transition: opacity 2.5s ease-in-out;
-  -o-transition: opacity 2.5s ease-in-out;
-  transition: opacity 2.5s ease-in-out;
-  opacity: 0;
-}
-
-.top.start .top__cartrack--2 .top__car {
-  -webkit-transition: -webkit-transform 3.5s ease-in-out;
-  transition: -webkit-transform 3.5s ease-in-out;
-  -o-transition: transform 3.5s ease-in-out;
-  transition: transform 3.5s ease-in-out;
-  transition: transform 3.5s ease-in-out, -webkit-transform 3.5s ease-in-out;
-  -webkit-transform: matrix(1, 0, 0, 1, 635, 0);
-  -ms-transform: matrix(1, 0, 0, 1, 635, 0);
-  transform: matrix(1, 0, 0, 1, 635, 0);
-}
-
-.top.start .top__cartrack--2 .top__model {
-  -webkit-transition: opacity 2.5s ease-in-out;
-  -o-transition: opacity 2.5s ease-in-out;
-  transition: opacity 2.5s ease-in-out;
-  opacity: 0;
 }
 
 .top__inner {
@@ -360,12 +327,20 @@ section h2 {
 .top__model {
   position: absolute;
   max-width: 255px;
+  -webkit-transition: opacity .2s ease-out;
+  -o-transition: opacity .2s ease-out;
+  transition: opacity .2s ease-out;
 }
 
 .top__car {
   position: relative;
   z-index: 1;
   max-width: none;
+  -webkit-transition: -webkit-transform .2s ease-out;
+  transition: -webkit-transform .2s ease-out;
+  -o-transition: transform .2s ease-out;
+  transition: transform .2s ease-out;
+  transition: transform .2s ease-out, -webkit-transform .2s ease-out;
 }
 
 .top__title {
@@ -374,6 +349,8 @@ section h2 {
   letter-spacing: 0.1em;
   line-height: 45px;
   margin-bottom: 25px;
+  position: relative;
+  z-index: 1;
 }
 
 .top__title strong {
@@ -386,6 +363,7 @@ section h2 {
   position: absolute;
   bottom: 65px;
   right: 0;
+  z-index: 1;
 }
 
 .date {
@@ -457,9 +435,6 @@ section h2 {
   display: block;
   position: absolute;
   opacity: 0;
-  -webkit-transition: opacity .3s ease;
-  -o-transition: opacity .3s ease;
-  transition: opacity .3s ease;
 }
 
 .cars__bg.active {
@@ -492,6 +467,8 @@ section h2 {
   position: absolute;
   top: 350px;
   left: 38%;
+  width: 0;
+  height: 0;
 }
 
 .cars__slider .slick-list {
@@ -1822,6 +1799,8 @@ section h2 {
   .prizes__logo {
     margin: 0 auto;
     display: block !important;
+    position: relative;
+    z-index: 1;
   }
   .prizes__description {
     max-width: none;

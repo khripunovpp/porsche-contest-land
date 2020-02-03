@@ -15,6 +15,11 @@ var menuTriggerStart = $(".scroll").offset().top;
 var sectionsNav = $(".sections");
 var shift = 150;
 
+var car1 = $(".top__cartrack--1 .top__car"),
+  car2 = $(".top__cartrack--2 .top__car"),
+  modelSign1 = $(".top__cartrack--1 .top__model"),
+  modelSign2 = $(".top__cartrack--2 .top__model");
+
 var scrollDetection = function() {
   $("section").each(function() {
     var that = this;
@@ -32,7 +37,13 @@ var scrollDetection = function() {
   } else {
     sectionsNav.removeClass("show expanded");
   }
-};
+
+  var carMoveCoeff = scrollTop/.7;
+  var opacity = 1 - Math.abs(carMoveCoeff/250);
+  car1.css('transform', 'translate3d(-'+carMoveCoeff+'px,0,0)');
+  car2.css('transform', 'translate3d('+carMoveCoeff+'px,0,0)');
+  modelSign1.add(modelSign2).css('opacity', opacity);
+}
 
 var hightlight = function(id) {
   $(".sections__item")
@@ -122,7 +133,9 @@ var carsSection = function() {
     prevArrow: $(".cars__prev"),
     nextArrow: $(".cars__next"),
     autoplay: true,
-    autoplaySpeed: 3500
+    autoplaySpeed: 3500,
+    pauseOnHover: false,
+    pauseOnDotsHover: false
   });
 
   var modelsImg = $(".cars__models img"),
@@ -182,6 +195,8 @@ var langSwitcher = function() {
     : "en";
   language = language.substr(0, 2).toLowerCase();
 
+  fillInitial();
+
   if (language === "ru") switchLang("ru");
 
   document.addEventListener("click", function(e) {
@@ -193,6 +208,17 @@ var langSwitcher = function() {
 
     if (langCurrent !== langToSwitch) switchLang(langToSwitch);
   });
+
+  function fillInitial() {
+    var langInitial = document.body.getAttribute("data-lang-status");
+
+    var content = [].slice.call(document.querySelectorAll("[data-lang-id]"));
+
+    content.forEach(function(item) {
+      var id = +item.getAttribute("data-lang-id");
+      data[langInitial][id] = item.innerHTML;
+    });
+  }
 
   function switchLang(lang) {
     var langCurrent = document.body.getAttribute("data-lang-status");
@@ -217,7 +243,8 @@ var langSwitcher = function() {
 
     content.forEach(function(item) {
       var id = +item.getAttribute("data-lang-id");
-      item.innerHTML = data[lang][id];
+      var replaceHTML = data[lang][id];
+      if (replaceHTML.length > 0) item.innerHTML = replaceHTML;
     });
 
     document.documentElement.lang = lang;
@@ -229,11 +256,9 @@ $(function() {
     event.preventDefault();
     $(this).toggleClass("opened");
   });
-  // langSwitcher();
+  langSwitcher();
   scrollDetection();
   $(document).on("scroll", scrollDetection);
-
-  $(".top").addClass("start");
 
   $(".sections__item, .scroll").on("click", function(e) {
     e.preventDefault();

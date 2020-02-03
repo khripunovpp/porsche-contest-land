@@ -5,21 +5,6 @@
 .top
 	background-image: url(../img/bg-1.jpg)
 	background-position: 50% 0
-	&.start
-		.top__cartrack--1 
-			.top__car
-				transition: transform 3.5s ease-in-out
-				transform: matrix(1, 0, 0, 1, -635, 0)
-			.top__model
-				transition: opacity 2.5s ease-in-out
-				opacity: 0
-		.top__cartrack--2 
-			.top__car
-				transition: transform 3.5s ease-in-out
-				transform: matrix(1, 0, 0, 1, 635, 0)
-			.top__model
-				transition: opacity 2.5s ease-in-out
-				opacity: 0
 	&__inner
 		position: relative
 		min-height: 872px
@@ -42,16 +27,20 @@
 	&__model
 		position: absolute
 		max-width: 255px
+		transition: opacity .2s ease-out
 	&__car
 		position: relative
 		z-index: 1
 		max-width: none
+		transition: transform .2s ease-out
 	&__title
 		text-align: center
 		margin-top: -135px
 		letter-spacing: 0.1em
 		line-height: 45px
 		margin-bottom: 25px
+		position: relative
+		z-index: 1
 		strong
 			font-size: 65px
 			display: block
@@ -60,6 +49,7 @@
 		position: absolute
 		bottom: 65px
 		right: 0
+		z-index: 1
 
 
 .date

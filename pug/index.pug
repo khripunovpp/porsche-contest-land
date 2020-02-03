@@ -39,25 +39,25 @@ html(lang="en")
 									span
 								ul.nav__list
 									li.nav__item
-										a.nav__link(href="https://adcombo.com/offers/") Our offers
+										a.nav__link(href="https://adcombo.com/offers/")(data-lang-id="48") Our offers
 									li.nav__item
-										a.nav__link(href="https://adcombo.com/publisher/") Publisher
+										a.nav__link(href="https://adcombo.com/publisher/")(data-lang-id="49") Publisher
 									li.nav__item
-										a.nav__link(href="https://adcombo.com/advertiser/") Advertiser
+										a.nav__link(href="https://adcombo.com/advertiser/")(data-lang-id="50") Advertiser
 									li.nav__item
-										a.nav__link(href="https://blog.adcombo.com/") Blog
+										a.nav__link(href="https://blog.adcombo.com/")(data-lang-id="51") Blog
 									li.nav__item
-										a.nav__link(href="https://adcombo.com/contact/") Contact
+										a.nav__link(href="https://adcombo.com/contact/")(data-lang-id="52") Contact
 									li.nav__item
-										a.nav__link(href="https://adcombo.com/faq/") FAQ
+										a.nav__link(href="https://adcombo.com/faq/")(data-lang-id="53") FAQ
 									li.nav__item
-										a.nav__link(href="https://adcombo.com/signup/").active Sign Up
+										a.nav__link(href="https://adcombo.com/signup/")(data-lang-id="54").active Sign Up
 									li.nav__item
-										a.nav__link(href="https://my.adcombo.com/login").active Log In
-								//- button.nav__lang.lang
-								//- 	span.lang__current(data-lang-status="en") En
-								//- 	span.lang__list
-								//- 		span.lang__item(data-lang-switcher="ru") Ru
+										a.nav__link(href="https://my.adcombo.com/login")(data-lang-id="55").active Log In
+								button.nav__lang.lang
+									span.lang__current(data-lang-status="en") En
+									span.lang__list
+										span.lang__item(data-lang-switcher="ru") Ru
 					
 			section.top#top
 				.container
@@ -65,15 +65,20 @@ html(lang="en")
 						.top__cartrack.top__cartrack--1
 							img.top__model(src="img/boxster_logo.svg", alt="")
 							img.top__car(src="img/car-1.png", alt="")
-						h1.top__title new challenge
-							strong posh’n’porsche
+						h1.top__title 
+							span(data-lang-id="1") new challenge
+							strong(data-lang-id="2") posh’n’porsche
 						.top__cartrack.top__cartrack--2
 							img.top__car(src="img/car-2.png", alt="")
 							img.top__model(src="img/carrera_logo.svg", alt="")
 						.top__date.date
-							span.date__from Start 01.02.20
+							span.date__from 
+								span(data-lang-id="3") Start 
+								|  01.02.20
 							span.date__sep
-							span.date__to Finish 01.09.20
+							span.date__to 
+								span(data-lang-id="4") Finish 
+								|  01.09.20
 
 			button.scroll(data-href="cars")
 
@@ -82,11 +87,11 @@ html(lang="en")
 					.cars__inner
 						button.cars__prev
 						button.cars__next
-						h2.cars__title Win a porsche
+						h2.cars__title(data-lang-id="5") Win a porsche
 						.cars__models
 							img(src="img/carrera_logo.svg", alt="").active
 							img(src="img/boxster_logo.svg", alt="")
-						p.cars__description Drive traffic to #[strong all offers] for #[strong all GEOs] and get #[strong 1 Porsche Point per every $ 10 000] available for payout within your account. The more #[strong Porsche Points] you get, the higher your chances of winning are!
+						p.cars__description(data-lang-id="6") Drive traffic to #[strong all offers] for #[strong all GEOs] and get #[strong 1 Porsche Point per every $ 10 000] available for payout within your account. The more #[strong Porsche Points] you get, the higher your chances of winning are!
 						.cars__slider
 							div.cars__bg.cars__bg--1.active
 							div.cars__bg.cars__bg--2
@@ -98,21 +103,21 @@ html(lang="en")
 									.cars__item-wrap
 										img(src="img/cars-car-2.png", alt="").cars__car
 						.cars__footer
-							a(href="https://my.adcombo.com/dashboard").cars__btn.btn START THE RACE
+							a(href="https://my.adcombo.com/dashboard").cars__btn.btn(data-lang-id="7") START THE RACE
 
 			section.prizes#prizes
 				.container
 					.prizes__inner
 						.prizes__content
-							h2.prizes__title ADDITIONAL #[br]PRIZES
-							p.prizes__text #[span Each contest participant of TOP-50] affiliates #[br] can win 1 additional prize and 1 grand prize! 
+							h2.prizes__title(data-lang-id="8") ADDITIONAL #[br]PRIZES
+							p.prizes__text(data-lang-id="9") #[span Each contest participant of TOP-50] affiliates #[br] can win 1 additional prize and 1 grand prize! 
 							.prizes__list
 								button.prizes__list-item.prizes__list-item--1.active 
 									span.prizes__list-item-logo
-									| Rolex Submariner
+									span(data-lang-id="10") Rolex Submariner
 								button.prizes__list-item.prizes__list-item--2 
 									span.prizes__list-item-logo
-								button.prizes__list-item.disabled To be announced
+								button.prizes__list-item.disabled(data-lang-id="11") To be announced
 						.prizes__slider
 							button.prizes__prev
 							button.prizes__next
@@ -136,7 +141,7 @@ html(lang="en")
 			section.media#media
 				.container
 					.media__inner
-						h2.media__title.mobile-only How we partied last time
+						h2.media__title.mobile-only(data-lang-id="12") How we partied last&nbsp;time
 						.media__videos
 							.media__videos-wrap
 								button.media__play
@@ -147,67 +152,67 @@ html(lang="en")
 									.media__item
 										video(data-url="/152/videos/1580252400/porsche-contest-2020", poster="img/poster-1.jpg").video
 								button.media__next
-						h2.media__title.desktop-only How we partied last time
+						h2.media__title.desktop-only(data-lang-id="12") How we partied last time
 
 			section.faq#rules
 				.container
 					.faq__inner
-						h2.faq__title Rules #[br]and Conditions
+						h2.faq__title(data-lang-id="13") Rules #[br]and Conditions
 						.faq__content
 							ul.faq__list
 								li.faq__item
-									p.faq__item-caption Who takes part in the contest?
+									p.faq__item-caption(data-lang-id="14") Who takes part in the contest?
 									.faq__item-text
-										p All the affiliates of the AdCombo affiliate network are the participants. 
+										p(data-lang-id="15") All the affiliates of the AdCombo affiliate network are the participants. 
 								li.faq__item
-									p.faq__item-caption What offers should I manage traffic to?
+									p.faq__item-caption(data-lang-id="16") What offers should I manage traffic to?
 									.faq__item-text 
-										p You should manage your traffic to all offers of AdCombo, CTR.ru, and Ecombo Junior for all GEOs.
-										p NB: there are special rates for some  offers. For instance, redirect offers have a reduction rate of x0.25. Contact your AM for more information. 
+										p(data-lang-id="17") You should manage your traffic to all offers of AdCombo, CTR.ru, and Ecombo Junior for all GEOs.
+										p(data-lang-id="18") NB: there are special rates for some  offers. For instance, redirect offers have a reduction rate of x0.25. Contact your AM for more information. 
 								li.faq__item
-									p.faq__item-caption How does it work? 
+									p.faq__item-caption(data-lang-id="19") How does it work? 
 									.faq__item-text
-										p A new section in the user interface will appear. You’ll be able to check the current quantity of #[strong Porsche Points] you gained and your actual position in the Top-ranking table #[i (Top-10, Top-20 , Top-30, Top-40, Top-50 or under Top-50)]. 
-										p The more #[strong Porsche Points] you get, the higher your position is.
+										p(data-lang-id="20") A new section in the user interface will appear. You’ll be able to check the current quantity of #[strong Porsche Points] you gained and your actual position in the Top-ranking table #[i (Top-10, Top-20 , Top-30, Top-40, Top-50 or under Top-50)]. 
+										p(data-lang-id="21") The more #[strong Porsche Points] you get, the higher your position is.
 								li.faq__item
-									p.faq__item-caption What are the “Porsche Points” and how can I get them? 
+									p.faq__item-caption(data-lang-id="22") What are the “Porsche Points” and how can I get them? 
 									.faq__item-text
-										p #[strong Porsche Points] are the contest currency. You get #[strong 1 Porsche Point] per each #[strong 10 000 USD] earned and available for withdrawal in your affiliate account. There are special rates for the conversion of funds into Porsche Points for some types of offers: #[strong (funds earned) x (offer rate)].
-										p #[strong Example]: an affiliate has run traffic in the period from #[strong Feb 1, 2020, to Sep 1, 2020], inclusive and earned #[strong 350 000 USD] available for withdrawal. Hence, he got #[strong 35 Porsche Points].
-										p #[strong ATTENTION]: An affiliate cannot get any #[strong Porsche Points] for unapproved or rejected leads as well as for the held funds.
+										p(data-lang-id="23") #[strong Porsche Points] are the contest currency. You get #[strong 1 Porsche Point] per each #[strong 10 000 USD] earned and available for withdrawal in your affiliate account. There are special rates for the conversion of funds into Porsche Points for some types of offers: #[strong (funds earned) x (offer rate)].
+										p(data-lang-id="24") #[strong Example]: an affiliate has run traffic in the period from #[strong Feb 1, 2020, to Sep 1, 2020], inclusive and earned #[strong 350 000 USD] available for withdrawal. Hence, he got #[strong 35 Porsche Points].
+										p(data-lang-id="25") #[strong ATTENTION]: An affiliate cannot get any #[strong Porsche Points] for unapproved or rejected leads as well as for the held funds.
 								
 							ul.faq__list
 								//- li.faq__item
-								//- 	p.faq__item-caption What changes will the AdCombo Loyalty Program face?
+								//- 	p.faq__item-caption(data-lang-id="45") What changes will the AdCombo Loyalty Program face?
 								//- 	.faq__item-text
-								//- 		p The sum gained with the Loyalty Program will be on hold and not be available for withdrawal, but it will be displayed on the affiliate's dashboard and in the chart. 
-								//- 		p The maximum percentage of the affiliate's income from the AdCombo Loyalty Program cannot be higher than 4%. 
+								//- 		p(data-lang-id="46") The sum gained with the Loyalty Program will be on hold and not be available for withdrawal, but it will be displayed on the affiliate's dashboard and in the chart. 
+								//- 		p(data-lang-id="47") The maximum percentage of the affiliate's income from the AdCombo Loyalty Program cannot be higher than 4%. 
 								li.faq__item
-									p.faq__item-caption Who can participate in the prize drawing?
+									p.faq__item-caption(data-lang-id="26") Who can participate in the prize drawing?
 									.faq__item-text
-										p The affiliates entered TOP-50 by the end of the contest are eligible to take part in the prize draw at the party. 
-										P NB: #[u Only those who are present at the final party can have a right to be full participants in the prize drawing]. 
-										p The date and time of the party will be announced later. Don't miss the updates!
-										p #[strong ATTENTION]: AdCombo undertakes to provide the participants from the Top-50 with free accommodation at the venue of the final party at its expense. All travel expenses are paid by the participants themselves.
+										p(data-lang-id="27") The affiliates entered TOP-50 by the end of the contest are eligible to take part in the prize draw at the party. 
+										P(data-lang-id="28") NB: #[u Only those who are present at the final party can have a right to be full participants in the prize drawing]. 
+										p(data-lang-id="29") The date and time of the party will be announced later. Don't miss the updates!
+										p(data-lang-id="30") #[strong ATTENTION]: AdCombo undertakes to provide the participants from the Top-50 with free accommodation at the venue of the final party at its expense. All travel expenses are paid by the participants themselves.
 								li.faq__item
-									p.faq__item-caption How many prizes can a prize draw participant win? 
+									p.faq__item-caption(data-lang-id="31") How many prizes can a prize draw participant win? 
 									.faq__item-text
-										p Each participant of the prize drawing is able to win 1 additional prize and 1 grand prize (one of the two Porsche sports cars). 
+										p(data-lang-id="32") Each participant of the prize drawing is able to win 1 additional prize and 1 grand prize (one of the two Porsche sports cars). 
 								li.faq__item
-									p.faq__item-caption What is the procedure of choosing a winner?
+									p.faq__item-caption(data-lang-id="33") What is the procedure of choosing a winner?
 									.faq__item-text
-										p The winner is chosen by a draw.
-										p Each of the prize draw participants receives chips with its nickname registered in the AdCombo network. #[strong A quantity of chips of a participant is equal to the number of gained Porsche Points.]
-										p The chips of all the prize draw participants are put into a lottery drum. The drawing for the additional prizes is conducted first. Then the drawing of the grand prizes starts.
+										p(data-lang-id="34") The winner is chosen by a draw.
+										p(data-lang-id="35") Each of the prize draw participants receives chips with its nickname registered in the AdCombo network. #[strong A quantity of chips of a participant is equal to the number of gained Porsche Points.]
+										p(data-lang-id="36") The chips of all the prize draw participants are put into a lottery drum. The drawing for the additional prizes is conducted first. Then the drawing of the grand prizes starts.
 
 						.faq__other
-							p Follow our news and updates and send a ticket request to your personal manager or contact AdCombo Support if you have a question to ask. 
-							p The AdCombo affiliate network reserves the right to impose restrictions toward incoming traffic or suspend it temporarily due to the technical need of the traffic processing system. Moreover, AdCombo is able to set caps on offers or place a limit on the number of leads.
+							p(data-lang-id="37") Follow our news and updates and send a ticket request to your personal manager or contact AdCombo Support if you have a question to ask. 
+							p(data-lang-id="38") The AdCombo affiliate network reserves the right to impose restrictions toward incoming traffic or suspend it temporarily due to the technical need of the traffic processing system. Moreover, AdCombo is able to set caps on offers or place a limit on the number of leads.
 
 			footer.footer#footer
 				.container
 					.footer__inner
-						a(href="https://my.adcombo.com/dashboard").footer__btn.btn JOIN THE RACE
+						a(href="https://my.adcombo.com/dashboard").footer__btn.btn(data-lang-id="39") JOIN THE RACE
 							
 			aside.sections.show.expanded
 				.container
@@ -215,11 +220,11 @@ html(lang="en")
 						button.sections__btn.hide
 							span Additional prizes
 						.sections__list
-							button.sections__item(data-href="top") Top
-							button.sections__item(data-href="cars") Main prizes
-							button.sections__item(data-href="prizes") Additional prizes
-							button.sections__item(data-href="media") Media
-							button.sections__item(data-href="rules") Rules
+							button.sections__item(data-href="top")(data-lang-id="40") Top
+							button.sections__item(data-href="cars")(data-lang-id="41") Main prizes
+							button.sections__item(data-href="prizes")(data-lang-id="42") Additional prizes
+							button.sections__item(data-href="media")(data-lang-id="43") Media
+							button.sections__item(data-href="rules")(data-lang-id="44") Rules
 		script(type='text/javascript').
 			adroll_adv_id = "UXGB2QLMHBFBJLLKI3SCDJ"; adroll_pix_id = "EHABHXTFZ5ES7E3W4RZWGV";
 			(function () {
@@ -250,4 +255,5 @@ html(lang="en")
 
 
 		script(src="js/slick.min.js")
+		script(src="js/data.js")
 		script(src="js/common.js")
