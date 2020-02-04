@@ -89,7 +89,7 @@
         <div class="container">
           <div class="prizes__inner">
             <div class="prizes__content">
-              <h2 class="prizes__title" data-lang-id="8">ADDITIONAL <br>PRIZES</h2>
+              <h2 class="prizes__title" data-lang-id="8">Minor prizes</h2>
               <p class="prizes__text" data-lang-id="9"><span>Each contest participant of TOP-50</span> affiliates <br> can win 1 additional prize and 1 grand prize! </p>
               <div class="prizes__list">
                 <button class="prizes__list-item prizes__list-item--1 active"> <span class="prizes__list-item-logo"></span><span data-lang-id="10">Rolex Submariner</span></button>
@@ -115,23 +115,33 @@
       <section class="media" id="media">
         <div class="container">
           <div class="media__inner">
-            <h2 class="media__title mobile-only" data-lang-id="12">How we partied last&nbsp;time</h2>
-            <div class="media__videos">
-              <div class="media__videos-wrap">
-                <button class="media__play"></button>
-                <button class="media__prev"></button>
-                <div class="media__list">
-                  <div class="media__item">
-                    <video class="video" data-url="/152/videos/1580252400/porsche-contest-2020-2" poster="img/poster-2.jpg"></video>
-                  </div>
-                  <div class="media__item">
-                    <video class="video" data-url="/152/videos/1580252400/porsche-contest-2020" poster="img/poster-1.jpg"></video>
-                  </div>
+            <h2 class="media__title" data-lang-id="12">How we partied last&nbsp;time</h2>
+            <div class="media__section active" data-media="video">
+              <div class="media__item media__item--video">
+                <div class="video">
+                  <video data-url="/152/videos/1580252400/porsche-contest-2020-2" poster="img/poster-2.jpg"></video>
+                  <button class="video__play"></button>
                 </div>
-                <button class="media__next"></button>
+              </div>
+              <div class="media__item media__item--video">
+                <div class="video">
+                  <video data-url="/152/videos/1580252400/porsche-contest-2020" poster="img/poster-1.jpg"></video>
+                  <button class="video__play"></button>
+                </div>
               </div>
             </div>
-            <h2 class="media__title desktop-only" data-lang-id="12">How we partied last time</h2>
+            <div class="media__section" data-media="gallery">
+              <div class="media__item"><img src="img/pic-1.jpg" alt=""></div>
+              <div class="media__item"><img src="img/pic-2.jpg" alt=""></div>
+              <div class="media__item"><img src="img/pic-3.jpg" alt=""></div>
+              <div class="media__item"><img src="img/pic-1.jpg" alt=""></div>
+              <div class="media__item"><img src="img/pic-2.jpg" alt=""></div>
+              <div class="media__item"><img src="img/pic-3.jpg" alt=""></div>
+            </div>
+            <div class="media__nav">
+              <button class="media__btn media__btn--left active" data-media-href="video">Video</button>
+              <button class="media__btn media__btn--right" data-media-href="gallery">Gallery</button>
+            </div>
           </div>
         </div>
       </section>
@@ -216,8 +226,8 @@
             <button class="sections__btn hide"><span>Additional prizes</span></button>
             <div class="sections__list">
               <button class="sections__item" data-href="top" data-lang-id="40">Top</button>
-              <button class="sections__item" data-href="cars" data-lang-id="41">Main prizes</button>
-              <button class="sections__item" data-href="prizes" data-lang-id="42">Additional prizes</button>
+              <button class="sections__item" data-href="cars" data-lang-id="41">Major prizes</button>
+              <button class="sections__item" data-href="prizes" data-lang-id="42">Minor prizes</button>
               <button class="sections__item" data-href="media" data-lang-id="43">Media</button>
               <button class="sections__item" data-href="rules" data-lang-id="44">Rules</button>
             </div>

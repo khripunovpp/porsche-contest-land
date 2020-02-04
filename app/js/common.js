@@ -38,12 +38,15 @@ var scrollDetection = function() {
     sectionsNav.removeClass("show expanded");
   }
 
-  var carMoveCoeff = scrollTop/.7;
-  var opacity = 1 - Math.abs(carMoveCoeff/250);
-  car1.css('transform', 'translate3d(-'+carMoveCoeff+'px,0,0)');
-  car2.css('transform', 'translate3d('+carMoveCoeff+'px,0,0)');
-  modelSign1.add(modelSign2).css('opacity', opacity);
-}
+  var coeff = scrollTop / 0.8 < 0 ? 0 : scrollTop / 0.8;
+  var carMoveCoeff = Math.ceil(coeff);
+  var opacity = 1 - Math.abs(coeff / 250);
+  var opacityCoeff = opacity < 0 ? 0 : opacity;
+
+  car1.css("transform", "translate3d(-" + carMoveCoeff + "px,0,0)");
+  car2.css("transform", "translate3d(" + carMoveCoeff + "px,0,0)");
+  modelSign1.add(modelSign2).css("opacity", opacityCoeff);
+};
 
 var hightlight = function(id) {
   $(".sections__item")
@@ -82,7 +85,7 @@ var videoPlayer = function() {
         );
       $(this).after(
         $(
-          '<div class="media__poster" style="background-image: url(' +
+          '<div class="video__poster" style="background-image: url(' +
             posterUrl +
             ')"></div>'
         )
@@ -90,34 +93,64 @@ var videoPlayer = function() {
     }
   });
 
-  var slider = $(".media__list").slick({
-    infinite: false,
-    fade: true,
-    speed: 500,
-    prevArrow: $(".media__prev"),
-    nextArrow: $(".media__next")
-  });
+  var playBtn = $(".video__play");
+  videoWrap = $(".video");
 
-  var playBtn = $(".media__play"),
-    videoWrap = $(".media__videos"),
-    video = document.querySelector(".slick-active video");
-
-  slider.on("beforeChange", function() {
-    video.pause();
-    videoWrap.removeClass("playing");
-  });
-
-  slider.on("afterChange", function() {
-    video = document.querySelector(".slick-active video");
-  });
+  var videos = $('video');
 
   playBtn.on("click", function() {
+    stopAll();
+    var video = $(this)
+      .closest(videoWrap)
+      .find("video")
+      .get(0);
+
     video.play();
+
     $(video)
-      .closest(".media__item")
-      .addClass("was-played");
-    videoWrap.addClass("playing");
+      .closest(videoWrap)
+      .addClass("playing");
   });
+
+  function stopAll(exept) {
+    $('video').not(exept).each(function(el){
+      var v = $(this).get(0);
+      v.pause()
+    })
+  }
+
+  videos.on('play', function() {
+    stopAll(this);
+  })
+
+  var navs = $('.media__btn');
+  navs.on('click', function(event) {  
+    event.preventDefault();
+    var sectionId = $(this).attr('data-media-href');
+    $(this).addClass('active').siblings().removeClass('active');
+    $('.media__section[data-media="'+sectionId+'"]').addClass('active').siblings().removeClass('active');
+  })
+
+  var gallerySlider = $(".media__section[data-media='gallery']").slick({
+    slidesToShow: 3,
+    infinite: false,
+    speed: 300,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    pauseOnHover: false,
+    pauseOnDotsHover: false,
+    infinite: 'loop'
+  });
+  var videoSlider = $(".media__section[data-media='video']").slick({
+    slidesToShow: 2,
+    infinite: false,
+    speed: 300,
+    autoplay: true,
+    autoplaySpeed: 3500,
+    pauseOnHover: false,
+    pauseOnDotsHover: false
+  });
+
 };
 
 function setActive(collection, i) {

@@ -109,7 +109,7 @@ html(lang="en")
 				.container
 					.prizes__inner
 						.prizes__content
-							h2.prizes__title(data-lang-id="8") ADDITIONAL #[br]PRIZES
+							h2.prizes__title(data-lang-id="8") Minor prizes
 							p.prizes__text(data-lang-id="9") #[span Each contest participant of TOP-50] affiliates #[br] can win 1 additional prize and 1 grand prize! 
 							.prizes__list
 								button.prizes__list-item.prizes__list-item--1.active 
@@ -141,18 +141,32 @@ html(lang="en")
 			section.media#media
 				.container
 					.media__inner
-						h2.media__title.mobile-only(data-lang-id="12") How we partied last&nbsp;time
-						.media__videos
-							.media__videos-wrap
-								button.media__play
-								button.media__prev
-								.media__list
-									.media__item
-										video(data-url="/152/videos/1580252400/porsche-contest-2020-2", poster="img/poster-2.jpg").video
-									.media__item
-										video(data-url="/152/videos/1580252400/porsche-contest-2020", poster="img/poster-1.jpg").video
-								button.media__next
-						h2.media__title.desktop-only(data-lang-id="12") How we partied last time
+						h2.media__title(data-lang-id="12") How we partied last&nbsp;time
+						.media__section.active(data-media="video")
+							.media__item.media__item--video
+								.video
+									video(data-url="/152/videos/1580252400/porsche-contest-2020-2", poster="img/poster-2.jpg")
+									button.video__play
+							.media__item.media__item--video
+								.video
+									video(data-url="/152/videos/1580252400/porsche-contest-2020", poster="img/poster-1.jpg")
+									button.video__play
+						.media__section(data-media="gallery")
+							.media__item
+								img(src="img/pic-1.jpg", alt="")
+							.media__item
+								img(src="img/pic-2.jpg", alt="")
+							.media__item
+								img(src="img/pic-3.jpg", alt="")
+							.media__item
+								img(src="img/pic-1.jpg", alt="")
+							.media__item
+								img(src="img/pic-2.jpg", alt="")
+							.media__item
+								img(src="img/pic-3.jpg", alt="")
+						.media__nav
+							button.media__btn.media__btn--left.active(data-media-href="video") Video
+							button.media__btn.media__btn--right(data-media-href="gallery") Gallery
 
 			section.faq#rules
 				.container
@@ -221,8 +235,8 @@ html(lang="en")
 							span Additional prizes
 						.sections__list
 							button.sections__item(data-href="top")(data-lang-id="40") Top
-							button.sections__item(data-href="cars")(data-lang-id="41") Main prizes
-							button.sections__item(data-href="prizes")(data-lang-id="42") Additional prizes
+							button.sections__item(data-href="cars")(data-lang-id="41") Major prizes
+							button.sections__item(data-href="prizes")(data-lang-id="42") Minor prizes
 							button.sections__item(data-href="media")(data-lang-id="43") Media
 							button.sections__item(data-href="rules")(data-lang-id="44") Rules
 		script(type='text/javascript').
