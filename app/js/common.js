@@ -72,7 +72,6 @@ var videoPlayer = function() {
   $("video").each(function() {
     if ($(this).data("url")) {
       var posterUrl = $(this).attr("poster");
-      $(this).removeAttr("poster");
       $(this)
         .attr("controlsList", "nodownload")
         .attr("controls", "controls")
@@ -96,7 +95,7 @@ var videoPlayer = function() {
   var playBtn = $(".video__play");
   videoWrap = $(".video");
 
-  var videos = $('video');
+  var videos = $("video");
 
   playBtn.on("click", function() {
     stopAll();
@@ -113,44 +112,66 @@ var videoPlayer = function() {
   });
 
   function stopAll(exept) {
-    $('video').not(exept).each(function(el){
-      var v = $(this).get(0);
-      v.pause()
-    })
+    $("video")
+      .not(exept)
+      .each(function(el) {
+        var v = $(this).get(0);
+        v.pause();
+      });
   }
 
-  videos.on('play', function() {
+  videos.on("play", function() {
     stopAll(this);
-  })
+  });
 
-  var navs = $('.media__btn');
-  navs.on('click', function(event) {  
+  var navs = $(".media__btn");
+  navs.on("click", function(event) {
     event.preventDefault();
-    var sectionId = $(this).attr('data-media-href');
-    $(this).addClass('active').siblings().removeClass('active');
-    $('.media__section[data-media="'+sectionId+'"]').addClass('active').siblings().removeClass('active');
-  })
+    var sectionId = $(this).attr("data-media-href");
+    $(this)
+      .addClass("active")
+      .siblings()
+      .removeClass("active");
+    $('.media__section[data-media="' + sectionId + '"]')
+      .addClass("active")
+      .siblings()
+      .removeClass("active");
+  });
 
   var gallerySlider = $(".media__section[data-media='gallery']").slick({
     slidesToShow: 3,
-    infinite: false,
+    infinite: true,
     speed: 300,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 4000,
     pauseOnHover: false,
     pauseOnDotsHover: false,
-    infinite: 'loop'
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   });
   var videoSlider = $(".media__section[data-media='video']").slick({
     slidesToShow: 2,
-    infinite: false,
+    infinite: true,
     speed: 300,
     autoplay: true,
-    autoplaySpeed: 3500,
+    autoplaySpeed: 4000,
     pauseOnHover: false,
-    pauseOnDotsHover: false
+    pauseOnDotsHover: false,
+    responsive: [
+      {
+        breakpoint: 991,
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
   });
-
 };
 
 function setActive(collection, i) {
