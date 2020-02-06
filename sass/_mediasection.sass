@@ -38,29 +38,24 @@
 		width: 100%
 		text-align: center
 	&__btn
-		padding: 7px 40px
-		text-align: center
-		border: none
-		background-color: transparent
-		cursor: pointer
-		opacity: 0.3
-		font-size: 18px
-		line-height: 25px
+		padding: 7px 60px
+		font-size: 13px
 		position: relative
 		min-width: 155px
-		transition: opacity .15s ease-out
+		opacity: 0.99
 		&--left
-			background-image: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
 			&::after
 				left: 20px
+				transform: scale(-1,1)
 		&--right
-			background-image: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)
 			&::after
 				right: 20px
-				transform: scale(-1,1)
 		&:hover,
 		&.active
-			opacity: 1
+			background-color: #fff
+			color: #000
+			&::after
+				background-image: url(../img/media-arrow-hover.png)
 		&+&
 			margin-left: 40px
 		&::after

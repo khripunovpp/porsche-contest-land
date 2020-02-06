@@ -545,7 +545,8 @@ $font3: 'DINPro-Regular', sans-serif
 		&::after
 			top: 200px
 		& .container
-			max-width: 290px
+			padding-left: 30px
+			padding-right: 30px
 		&__title
 			font-size: 16px
 			line-height: 24px
@@ -559,12 +560,16 @@ $font3: 'DINPro-Regular', sans-serif
 				padding-top: 11.2%
 		&__nav
 			bottom: 0
+			padding: 0 15px
 		&__btn
 			min-width: 130px
-			font-size: 14px
-			line-height: 19px
+			font-size: 11px
+			padding: 7px 10px
+			width: auto
 			&+&
 				margin-left: 20px
+			&::after
+				display: none	
 
 	.video
 		&__play

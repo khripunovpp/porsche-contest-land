@@ -853,46 +853,31 @@ section h2 {
 }
 
 .media__btn {
-  padding: 7px 40px;
-  text-align: center;
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-  opacity: 0.3;
-  font-size: 18px;
-  line-height: 25px;
+  padding: 7px 60px;
+  font-size: 13px;
   position: relative;
   min-width: 155px;
-  -webkit-transition: opacity .15s ease-out;
-  -o-transition: opacity .15s ease-out;
-  transition: opacity .15s ease-out;
-}
-
-.media__btn--left {
-  background-image: -webkit-gradient(linear, left top, right top, from(#FFFFFF), to(rgba(255, 255, 255, 0)));
-  background-image: -o-linear-gradient(left, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
-  background-image: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.99;
 }
 
 .media__btn--left::after {
   left: 20px;
-}
-
-.media__btn--right {
-  background-image: -webkit-gradient(linear, right top, left top, from(#FFFFFF), to(rgba(255, 255, 255, 0)));
-  background-image: -o-linear-gradient(right, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
-  background-image: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
-}
-
-.media__btn--right::after {
-  right: 20px;
   -webkit-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
+.media__btn--right::after {
+  right: 20px;
+}
+
 .media__btn:hover, .media__btn.active {
-  opacity: 1;
+  background-color: #fff;
+  color: #000;
+}
+
+.media__btn:hover::after, .media__btn.active::after {
+  background-image: url(../img/media-arrow-hover.png);
 }
 
 .media__btn + .media__btn {
@@ -1965,7 +1950,8 @@ section h2 {
     top: 200px;
   }
   .media .container {
-    max-width: 290px;
+    padding-left: 30px;
+    padding-right: 30px;
   }
   .media__title {
     font-size: 16px;
@@ -1984,14 +1970,19 @@ section h2 {
   }
   .media__nav {
     bottom: 0;
+    padding: 0 15px;
   }
   .media__btn {
     min-width: 130px;
-    font-size: 14px;
-    line-height: 19px;
+    font-size: 11px;
+    padding: 7px 10px;
+    width: auto;
   }
   .media__btn + .media__btn {
     margin-left: 20px;
+  }
+  .media__btn::after {
+    display: none;
   }
   .video__play {
     width: 30px;
