@@ -146,6 +146,7 @@ var videoPlayer = function() {
     autoplaySpeed: 4000,
     pauseOnHover: false,
     pauseOnDotsHover: false,
+    lazyLoad: 'ondemand',
     responsive: [
       {
         breakpoint: 991,
