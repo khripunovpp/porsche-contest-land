@@ -491,16 +491,8 @@ section h2 {
   transform: translateX(35px);
 }
 
-.cars__item-wrap.active .cars__car {
-  opacity: 1;
-  -webkit-transform: matrix(1, 0, 0, 1, 0, 0);
-  -ms-transform: matrix(1, 0, 0, 1, 0, 0);
-  transform: matrix(1, 0, 0, 1, 0, 0);
-}
-
 .cars__car {
   position: relative;
-  max-width: none;
   opacity: 0;
   -webkit-transition-property: opacity, -webkit-transform;
   transition-property: opacity, -webkit-transform;
@@ -510,6 +502,13 @@ section h2 {
   -webkit-transition: 1.5s ease-in-out;
   -o-transition: 1.5s ease-in-out;
   transition: 1.5s ease-in-out;
+}
+
+.cars__car.active {
+  opacity: 1 !important;
+  -webkit-transform: matrix(1, 0, 0, 1, 0, 0) !important;
+  -ms-transform: matrix(1, 0, 0, 1, 0, 0) !important;
+  transform: matrix(1, 0, 0, 1, 0, 0) !important;
 }
 
 .cars__prev, .cars__next {
@@ -599,6 +598,97 @@ section h2 {
 .cars__footer {
   margin-top: 165px;
   text-align: center;
+}
+
+.car {
+  width: 945px;
+  position: relative;
+}
+
+.car__wheels {
+  position: absolute;
+  bottom: 0;
+}
+
+.car__wheels .back,
+.car__wheels .front {
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  z-index: 9;
+}
+
+.car__car {
+  max-width: none;
+}
+
+.car--1 .car__wheels {
+  left: 0;
+  width: 942px;
+}
+
+.car--1 .car__wheels .back {
+  left: 265px;
+  bottom: 16px;
+  background-image: url(../img/cars-car-1-back.png);
+}
+
+.car--1 .car__wheels .front {
+  right: 0;
+  bottom: 9px;
+  background-image: url(../img/cars-car-1-front.png);
+}
+
+.car--2 .car__wheels {
+  left: 107px;
+  width: 949px;
+}
+
+.car--2 .car__wheels .back {
+  left: 265px;
+  bottom: 16px;
+  background-image: url(../img/cars-car-2-back.png);
+  animation-direction: reverse !important;
+}
+
+.car--2 .car__wheels .front {
+  right: 0;
+  bottom: 9px;
+  background-image: url(../img/cars-car-2-front.png);
+  animation-direction: reverse !important;
+}
+
+.car.active .car__wheels .back,
+.car.active .car__wheels .front {
+  -webkit-animation: rotate-center 1.5s ease-in-out both;
+  animation: rotate-center 1.5s ease-in-out both;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(40deg);
+    transform: rotate(40deg);
+  }
 }
 
 .prizes__inner {
@@ -1773,6 +1863,34 @@ section h2 {
   .cars__footer {
     padding: 0 20px;
     margin-top: 0;
+  }
+  .car__car {
+    width: 100%;
+  }
+  .car__wheels {
+    height: 100%;
+    width: 100% !important;
+  }
+  .car__wheels .front,
+  .car__wheels .back {
+    width: 38px;
+    height: 38px;
+  }
+  .car--1 .car__wheels .front {
+    right: 84px;
+    bottom: 3px;
+  }
+  .car--1 .car__wheels .back {
+    left: 66px;
+    bottom: 5px;
+  }
+  .car--2 .car__wheels .front {
+    right: 289px;
+    bottom: 3px;
+  }
+  .car--2 .car__wheels .back {
+    left: 116px;
+    bottom: 2px;
   }
   .btn {
     width: 100%;

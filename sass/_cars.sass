@@ -45,19 +45,14 @@
             .cars__car
                 left: -185px
                 transform: translateX(35px)
-    
-    &__item
-        &-wrap
-            &.active
-                .cars__car
-                    opacity: 1
-                    transform: matrix(1, 0, 0, 1, 0, 0)
     &__car
         position: relative
-        max-width: none
         opacity: 0
         transition-property: opacity, transform
         transition: 1.5s ease-in-out
+        &.active
+            opacity: 1 !important
+            transform: matrix(1, 0, 0, 1, 0, 0) !important
     &__prev,
     &__next
         position: absolute
@@ -97,7 +92,7 @@
             &.active
                 opacity: 1
         img+img
-            margin-left: 80px
+                margin-left: 80px
     &__info
         position: relative
         z-index: 1
@@ -116,3 +111,60 @@
     &__footer
         margin-top: 165px
         text-align: center
+
+.car
+    width: 945px
+    position: relative
+    &__wheels
+        position: absolute
+        bottom: 0
+        .back,
+        .front
+            width: 150px
+            height: 150px
+            border-radius: 100%
+            display: block
+            background-position: center
+            background-repeat: no-repeat
+            background-size: contain
+            position: absolute
+            z-index: 9
+    &__car
+        max-width: none
+    &--1
+        .car__wheels
+            left: 0
+            width: 942px
+            .back
+                left: 265px
+                bottom: 16px
+                background-image: url(../img/cars-car-1-back.png)
+            .front
+                right: 0
+                bottom: 9px
+                background-image: url(../img/cars-car-1-front.png)
+    &--2
+        .car__wheels
+            left: 107px
+            width: 949px
+            .back
+                left: 265px
+                bottom: 16px
+                background-image: url(../img/cars-car-2-back.png)
+                animation-direction: reverse !important
+            .front
+                right: 0
+                bottom: 9px
+                background-image: url(../img/cars-car-2-front.png)
+                animation-direction: reverse !important
+    &.active
+        .car__wheels
+            .back,
+            .front
+                animation: rotate-center 1.5s ease-in-out both
+    
+@keyframes rotate-center
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(40deg)

@@ -146,7 +146,7 @@ var videoPlayer = function() {
     autoplaySpeed: 4000,
     pauseOnHover: false,
     pauseOnDotsHover: false,
-    lazyLoad: 'ondemand',
+    lazyLoad: "ondemand",
     responsive: [
       {
         breakpoint: 991,
@@ -181,6 +181,18 @@ function setActive(collection, i) {
 }
 
 var carsSection = function() {
+  var modelsImg = $(".cars__models img"),
+    bg = $(".cars__bg"),
+    info = $(".cars__info"),
+    carWrap = $(".cars__car");
+
+  $(".cars__slider-wrap").on("init", function(event, slick) {
+    setActive(modelsImg, 0);
+    setActive(bg, 0);
+    setActive(info, 0);
+    $(".car--1").addClass("active");
+  });
+
   var slider = $(".cars__slider-wrap").slick({
     infinite: false,
     fade: true,
@@ -191,23 +203,17 @@ var carsSection = function() {
     autoplaySpeed: 3500,
     pauseOnHover: false,
     pauseOnDotsHover: false
-  });
-
-  var modelsImg = $(".cars__models img"),
-    bg = $(".cars__bg"),
-    info = $(".cars__info"),
-    carWrap = $(".cars__item-wrap");
-
-  slider.on("beforeChange", function(event, slick, currentSlide, nextSlide) {
+  }).on("beforeChange", function(event, slick, currentSlide, nextSlide) {
     setActive(modelsImg, nextSlide);
     setActive(bg, nextSlide);
     setActive(info, nextSlide);
-    $(".cars__item")
-      .eq(currentSlide)
-      .find(carWrap)
-      .removeClass("active");
-  });
-  slider.on("afterChange", function(event, slick, currentSlide) {
+    setTimeout(function() {
+      $(".cars__item")
+        .eq(currentSlide)
+        .find(carWrap)
+        .removeClass("active");
+    }, 300);
+  }).on("afterChange", function(event, slick, currentSlide) {
     $(".cars__item")
       .eq(currentSlide)
       .find(carWrap)
