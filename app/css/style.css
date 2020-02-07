@@ -608,7 +608,6 @@ section h2 {
 .car__wheels {
   position: absolute;
   bottom: 0;
-  display: none !important;
 }
 
 .car__wheels .back,
@@ -633,16 +632,19 @@ section h2 {
   width: 942px;
 }
 
+.car--1 .car__wheels .back,
+.car--1 .car__wheels .front {
+  background-image: url(../img/cars-wheel-1.png);
+}
+
 .car--1 .car__wheels .back {
   left: 265px;
   bottom: 16px;
-  background-image: url(../img/cars-car-1-back.png);
 }
 
 .car--1 .car__wheels .front {
   right: 0;
   bottom: 9px;
-  background-image: url(../img/cars-car-1-front.png);
 }
 
 .car--2 .car__wheels {
@@ -650,17 +652,20 @@ section h2 {
   width: 949px;
 }
 
+.car--2 .car__wheels .back,
+.car--2 .car__wheels .front {
+  background-image: url(../img/cars-wheel-2.png);
+}
+
 .car--2 .car__wheels .back {
   left: 265px;
   bottom: 16px;
-  background-image: url(../img/cars-car-2-back.png);
   animation-direction: reverse !important;
 }
 
 .car--2 .car__wheels .front {
   right: 0;
   bottom: 9px;
-  background-image: url(../img/cars-car-2-front.png);
   animation-direction: reverse !important;
 }
 
@@ -676,8 +681,8 @@ section h2 {
     transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(40deg);
-    transform: rotate(40deg);
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
   }
 }
 
@@ -687,8 +692,30 @@ section h2 {
     transform: rotate(0);
   }
   100% {
-    -webkit-transform: rotate(40deg);
-    transform: rotate(40deg);
+    -webkit-transform: rotate(35deg);
+    transform: rotate(35deg);
+  }
+}
+
+@-webkit-keyframes rotate-center-mobile {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(80deg);
+    transform: rotate(80deg);
+  }
+}
+
+@keyframes rotate-center-mobile {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(80deg);
+    transform: rotate(80deg);
   }
 }
 
@@ -1892,6 +1919,11 @@ section h2 {
   .car--2 .car__wheels .back {
     left: 116px;
     bottom: 2px;
+  }
+  .car.active .car__wheels .back,
+  .car.active .car__wheels .front {
+    -webkit-animation-name: rotate-center-mobile;
+    animation-name: rotate-center-mobile;
   }
   .btn {
     width: 100%;

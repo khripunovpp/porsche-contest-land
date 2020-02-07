@@ -118,7 +118,6 @@
     &__wheels
         position: absolute
         bottom: 0
-        display: none !important
         .back,
         .front
             width: 150px
@@ -136,27 +135,29 @@
         .car__wheels
             left: 0
             width: 942px
+            .back,
+            .front
+                background-image: url(../img/cars-wheel-1.png)
             .back
                 left: 265px
                 bottom: 16px
-                background-image: url(../img/cars-car-1-back.png)
             .front
                 right: 0
                 bottom: 9px
-                background-image: url(../img/cars-car-1-front.png)
     &--2
         .car__wheels
             left: 107px
             width: 949px
+            .back,
+            .front
+                background-image: url(../img/cars-wheel-2.png)
             .back
                 left: 265px
                 bottom: 16px
-                background-image: url(../img/cars-car-2-back.png)
                 animation-direction: reverse !important
             .front
                 right: 0
                 bottom: 9px
-                background-image: url(../img/cars-car-2-front.png)
                 animation-direction: reverse !important
     &.active
         .car__wheels
@@ -168,4 +169,10 @@
     0%
         transform: rotate(0)
     100%
-        transform: rotate(40deg)
+        transform: rotate(35deg)
+
+@keyframes rotate-center-mobile
+    0%
+        transform: rotate(0)
+    100%
+        transform: rotate(80deg)
