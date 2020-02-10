@@ -1383,6 +1383,10 @@ section h2 {
 }
 
 @media only screen and (max-width: 1150px) {
+  .nav__item,
+  .nav__lang {
+    margin-left: 20px;
+  }
   .top {
     background-position: center top -50px;
   }
@@ -1400,7 +1404,7 @@ section h2 {
     width: 780px;
   }
   .top__cartrack--1 .top__model {
-    right: 710px;
+    right: 680px;
     top: 197px;
   }
   .top__cartrack--2 .top__model {
